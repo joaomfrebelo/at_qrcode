@@ -1,0 +1,41 @@
+{
+    "name": "joaomfrebelo/at_qrcode",
+    "homepage": "https://github.com/joaomfrebelo/at_qrcode",
+    "keywords": [
+        "php"
+    ],
+    "authors": [
+        {
+            "name": "João Rebelo",
+            "homepage": "https://github.com/joaomfrebelo",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "test"
+        ]
+    },
+    "support": {
+        "issues": "https://github.com/joaomfrebelo/at_qrcode/issues",
+        "source": "https://github.com/joaomfrebelo/at_qrcode"
+    },
+    "license": "MIT",
+    "prefer-stable": true,
+    "type": "library",
+    "require": {
+        "php": "^5.3|^7.4",
+        "apache/log4php": "^2.3"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": "^4.0"
+    },
+    "version": "1.0.0-beta"
+}

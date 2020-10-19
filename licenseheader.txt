@@ -1,0 +1,5 @@
+/**
+ * MIT License
+ * @license https://github.com/joaomfrebelo/at_qrcode/blob/master/LICENSE
+ * Copyright (c) 2020 João Rebelo
+ */

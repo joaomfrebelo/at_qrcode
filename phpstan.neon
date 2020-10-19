@@ -1,0 +1,20 @@
+parameters:
+	level: 7
+	checkMissingIterableValueType: false
+	checkGenericClassInNonGenericObjectType: false
+	paths:
+		- src
+		- test
+	bootstrapFiles:
+		- test/bootstrap.php
+	ignoreErrors:
+		- '#Strict comparison using === between float and null will always evaluate to false#'
+		- '#Strict comparison using === between true and false will always evaluate to false#'
+		- '#Strict comparison using === between string and null will always evaluate to false#'
+		- '#Strict comparison using === between int and null will always evaluate to false#'
+		- 
+		   message: '#Parameter ([\D\d]+) Rebelo\\At\\QRCode\\Builder::set([\D\d]+) given#'
+		   path: test/Rebelo/At/QRCode/*
+	excludes_analyse:
+		- test/bootstrap.php
+		- test/Base.php
