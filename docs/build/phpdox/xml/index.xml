@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="D:/NetBeansProjects/PHP/AtCud/src">
+  <namespace name="Rebelo\At\QRCode">
+    <class name="Builder" src="Rebelo/At/QRCode/Builder.php" description="The Cud class" xml="classes/Rebelo_At_QRCode_Builder.xml"/>
+    <class name="QRCodeException" src="Rebelo/At/QRCode/QRCodeException.php" description="CudException" xml="classes/Rebelo_At_QRCode_QRCodeException.xml"/>
+    <class name="Tokens" src="Rebelo/At/QRCode/Tokens.php" description="Tokens" xml="classes/Rebelo_At_QRCode_Tokens.xml"/>
+  </namespace>
+  <namespace name="">
+    <class name="Exception" xml="classes/Exception.xml"/>
+  </namespace>
+</index>

@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Rebelo\At\QRCode\Builder" namespace="Rebelo\At\QRCode" name="Builder" abstract="false" final="false" start="18" end="2598">
+  <file path="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode" file="Builder.php" realpath="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode/Builder.php" size="86475" time="2020-10-19T22:27:41+01:00" unixtime="1603142861" sha1="c2f1e30541cc4b90ca6d28c17fb313e03e4671db" relative="Rebelo/At/QRCode/Builder.php"/>
+  <docblock>
+    <description compact="The Cud class"/>
+    <author value="João Rebelo&gt;"/>
+    <since value="1.0.0"/>
+  </docblock>
+  <member name="size" default="2" type="integer" visibility="public" static="true" line="24">
+    <docblock>
+      <description compact="Code size"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="margin" default="2" type="integer" visibility="public" static="true" line="30">
+    <docblock>
+      <description compact="Code margin"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="level" default="" type="{unknown}" constant="QR_ECLEVEL_M" visibility="public" static="true" line="36">
+    <docblock>
+      <description compact="QRcode ECC level"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="properties" default="" type="array" visibility="protected" static="false" line="42">
+    <docblock>
+      <description/>
+      <var description="string&gt;" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;int" namespace="Rebelo\At\QRCode" name="array&lt;int"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="48" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <since value="1.1.0"/>
+    </docblock>
+  </constructor>
+  <method name="getProperties" start="60" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get all setted properties, all properties are returned as string"/>
+      <return description="string&gt; All setted properties as string" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;int" namespace="Rebelo\At\QRCode" name="array&lt;int"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="formatFloat" start="70" end="73" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Format the float to string"/>
+      <param type="float" variable="$float"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="float" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setIssuerTin" start="83" end="99" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: A (This field is mandatory)&lt;br&gt; Issuer TIN (NIF)&lt;br&gt; Fill in with the issuer's TIN (NIF) without Country prefix&lt;br&gt;"/>
+      <param description="The company tax id (NIF)" type="string" variable="$tin"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="tin" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getIssuerTin" start="107" end="113" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: A (This field is mandatory)&lt;br&gt; Issuer TIN (NIF)&lt;br&gt; The issuer's TIN (NIF) without Country prefix&lt;br&gt;"/>
+      <return description="The company TIN (NIF)" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setBuyerTin" start="124" end="136" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: B (This field is mandatory)&lt;br&gt; Buyer's TIN (NIF)&lt;br&gt; Fill in with the buyer's TIN. When issuing a document, the “Final Consumer” fill in with 999999990.&lt;br&gt;"/>
+      <param description="The buyer's TIN (NIF)" type="string" variable="$tin"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="tin" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBuyerTin" start="144" end="150" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: B (This field is mandatory)&lt;br&gt; Buyer's TIN (NIF)&lt;br&gt; The buyer's TIN (NIF)"/>
+      <return description="The buyer's TIN (NIF)" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setCountryCode" start="160" end="173" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: C (This field is mandatory)&lt;br&gt; Buyer's Country&lt;br&gt; Fill in with the buyer's country code, as the Customers SAFT table.&lt;br&gt;"/>
+      <param description="The country code" type="string" variable="$countryCode"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="countryCode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCountryCode" start="180" end="186" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: C (This field is mandatory)&lt;br&gt; Buyer's Country&lt;br&gt;"/>
+      <return description="The buyer's country code" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setDocType" start="196" end="208" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: D (This field is mandatory)&lt;br&gt; Document type&lt;br&gt; Fill in according to the type of SAF-T (PT).&lt;br&gt;"/>
+      <param description="The document type" type="string" variable="$type"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDocType" start="216" end="222" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: D (This field is mandatory)&lt;br&gt; Document type&lt;br&gt; According to the type of SAF-T (PT).&lt;br&gt;"/>
+      <return description="The document type" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setDocStatus" start="232" end="244" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: E (This field is mandatory)&lt;br&gt; Document status&lt;br&gt; Fill in according to the type of SAF-T (PT).&lt;br&gt;"/>
+      <param description="The document status" type="string" variable="$status"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="status" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDocStatus" start="252" end="258" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: E (This field is mandatory)&lt;br&gt; Document status&lt;br&gt; According to the type of SAF-T (PT).&lt;br&gt;"/>
+      <return description="The document status" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setDocDate" start="268" end="281" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: F (This field is mandatory)&lt;br&gt; Document date&lt;br&gt; Use the format 'YYYYMMDD'&lt;br&gt;"/>
+      <param description="The document date" type="string" variable="$date"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="date" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDocDate" start="289" end="295" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: F (This field is mandatory)&lt;br&gt; Document date&lt;br&gt; Format 'YYYYMMDD'&lt;br&gt;"/>
+      <return description="The document status" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setDocNo" start="306" end="318" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: G (This field is mandatory)&lt;br&gt; Unique identification of the document&lt;br&gt; Fill in according to the type of SAF-T (PT).&lt;br&gt; Ex: 'FT A/999'&lt;br&gt;"/>
+      <param description="The document identifier" type="string" variable="$docNo"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="docNo" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDocNo" start="327" end="333" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: G (This field is mandatory)&lt;br&gt; Unique identification of the document&lt;br&gt; According to the type of SAF-T (PT).&lt;br&gt; Ex: 'FT A/999'&lt;br&gt;"/>
+      <return description="The document status" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setAtcud" start="343" end="356" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: H (This field is mandatory)&lt;br&gt; ATCUD&lt;br&gt; Ex: 'CSDF7T5H-35'&lt;br&gt;"/>
+      <param description="The ATCUD" type="string" variable="$atcud"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="atcud" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAtcud" start="364" end="370" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: H (This field is mandatory)&lt;br&gt; ATCUD&lt;br&gt; Ex: 'CSDF7T5H-35'&lt;br&gt;"/>
+      <return description="The ATCUD" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setDocWithoutVat" start="379" end="383" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I1&lt;br&gt; Invoke only this method if the case of a document without an indication of the VAT rate, which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isDocWithoutVat" start="392" end="403" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I1&lt;br&gt; Verify if is a document without an indication of the VAT rate, which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)"/>
+      <return description="null if is not setted" type="object">
+        <type full="Rebelo\At\QRCode\bool|null" namespace="Rebelo\At\QRCode" name="bool|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTExemptedBaseVat" start="415" end="428" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I2&lt;br&gt; VAT-exempt tax base of PT fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
+      <param description="Total value of the tax base exempt from VAT" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTExemptedBaseVat" start="438" end="444" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I2&lt;br&gt; VAT-exempt tax base of PT fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
+      <return description="Total value of the tax base exempt from VAT" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTReducedBaseVat" start="454" end="467" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
+      <param description="Total value of the tax base" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTReducedBaseVat" start="475" end="481" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
+      <return description="Total value of the tax base" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTReducedTotalVat" start="490" end="503" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
+      <param description="Total VAT at reduced rate" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTReducedTotalVat" start="510" end="516" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
+      <return description="Total VAT at reduced rate" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTIntermediateBaseVat" start="526" end="539" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
+      <param description="Total value of the tax base" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTIntermediateBaseVat" start="547" end="555" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
+      <return description="Total value of the tax base" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTIntermediateTotalVat" start="564" end="577" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
+      <param description="Total VAT at intermediate rate" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTIntermediateTotalVat" start="584" end="592" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
+      <return description="Total VAT at reduced rate" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTNormalBaseVat" start="602" end="615" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
+      <param description="Total value of the tax base" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTNormalBaseVat" start="623" end="629" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
+      <return description="Total value of the tax base" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTNormalTotalVat" start="638" end="651" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
+      <param description="Total VAT at normal rate" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTNormalTotalVat" start="658" end="664" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: I8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
+      <return description="Total VAT at reduced rate" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTACExemptedBaseVat" start="676" end="689" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J2&lt;br&gt; VAT-exempt tax base of PTAC fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
+      <param description="Total value of the tax base exempt from VAT" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTACExemptedBaseVat" start="699" end="707" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J2&lt;br&gt; VAT-exempt tax base of PTAC fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
+      <return description="Total value of the tax base exempt from VAT" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTACReducedBaseVat" start="717" end="730" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
+      <param description="Total value of the tax base" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTACReducedBaseVat" start="738" end="744" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
+      <return description="Total value of the tax base" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTACReducedTotalVat" start="753" end="766" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
+      <param description="Total VAT at reduced rate" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTACReducedTotalVat" start="773" end="781" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
+      <return description="Total VAT at reduced rate" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTACIntermediateBaseVat" start="791" end="804" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
+      <param description="Total value of the tax base" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTACIntermediateBaseVat" start="812" end="820" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
+      <return description="Total value of the tax base" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTACIntermediateTotalVat" start="829" end="842" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
+      <param description="Total VAT at intermediate rate" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTACIntermediateTotalVat" start="849" end="857" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
+      <return description="Total VAT at reduced rate" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTACNormalBaseVat" start="867" end="880" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
+      <param description="Total value of the tax base" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTACNormalBaseVat" start="888" end="894" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
+      <return description="Total value of the tax base" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTACNormalTotalVat" start="903" end="916" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
+      <param description="Total VAT at normal rate" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTACNormalTotalVat" start="923" end="929" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: J8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
+      <return description="Total VAT at reduced rate" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTMAExemptedBaseVat" start="941" end="954" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K2&lt;br&gt; VAT-exempt tax base of PTMA fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
+      <param description="Total value of the tax base exempt from VAT" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTMAExemptedBaseVat" start="964" end="972" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K2&lt;br&gt; VAT-exempt tax base of PTMA fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
+      <return description="Total value of the tax base exempt from VAT" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTMAReducedBaseVat" start="982" end="995" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
+      <param description="Total value of the tax base" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTMAReducedBaseVat" start="1003" end="1009" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
+      <return description="Total value of the tax base" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTMAReducedTotalVat" start="1018" end="1031" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
+      <param description="Total VAT at reduced rate" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTMAReducedTotalVat" start="1038" end="1046" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
+      <return description="Total VAT at reduced rate" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTMAIntermediateBaseVat" start="1056" end="1069" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
+      <param description="Total value of the tax base" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTMAIntermediateBaseVat" start="1077" end="1085" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
+      <return description="Total value of the tax base" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTMAIntermediateTotalVat" start="1094" end="1107" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
+      <param description="Total VAT at intermediate rate" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTMAIntermediateTotalVat" start="1114" end="1122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
+      <return description="Total VAT at reduced rate" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTMANormalBaseVat" start="1132" end="1145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
+      <param description="Total value of the tax base" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTMANormalBaseVat" start="1153" end="1159" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
+      <return description="Total value of the tax base" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPTMANormalTotalVat" start="1168" end="1181" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
+      <param description="Total VAT at normal rate" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPTMANormalTotalVat" start="1188" end="1194" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: K8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
+      <return description="Total VAT at reduced rate" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setTotalNonVat" start="1204" end="1216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: L&lt;br&gt; Not subject / non-taxable in VAT (IVA)&lt;br&gt; Total value related to non-subject / non-taxable transactions in VAT."/>
+      <param description="Total value non-subject / non-taxable" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTotalNonVat" start="1224" end="1230" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: L&lt;br&gt; Not subject / non-taxable in VAT (IVA)&lt;br&gt; Total value related to non-subject / non-taxable transactions in VAT."/>
+      <return description="Total value of non-subject / non-taxable" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setTotalStampTax" start="1240" end="1252" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: M&lt;br&gt; Stamp tax&lt;br&gt; Total value of stamp tax."/>
+      <param description="Total value of stamp tax" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTotalStampTax" start="1260" end="1266" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: M&lt;br&gt; Stamp tax&lt;br&gt; Total value of stamp tax."/>
+      <return description="Total value of stamp tax" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setTaxPayable" start="1276" end="1288" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: N&lt;br&gt; TaxPayable&lt;br&gt; Total value of VAT and Stamp Tax - TaxPayable field of SAF-T (PT)"/>
+      <param description="Total value of tax payable" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTaxPayable" start="1296" end="1302" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: N&lt;br&gt; TaxPayable&lt;br&gt; Total value of VAT and Stamp Tax - TaxPayable field of SAF-T (PT)"/>
+      <return description="Total tax payable" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setGrossTotal" start="1312" end="1324" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: O&lt;br&gt; Gross total&lt;br&gt; Total document value - GrossTotal field of SAF-T (PT)."/>
+      <param description="Total gross" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getGrossTotal" start="1332" end="1338" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: O&lt;br&gt; Gross total&lt;br&gt; Total document value - GrossTotal field of SAF-T (PT)."/>
+      <return description="Total gross" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setWithholdingTaxAmount" start="1347" end="1359" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: P&lt;br&gt; Withholding Tax Amount&lt;br&gt;"/>
+      <param description="Withholding Tax Amount" type="float" variable="$value"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getWithholdingTaxAmount" start="1366" end="1374" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: P&lt;br&gt; Withholding Tax Amount"/>
+      <return description="Withholding Tax Amount" type="object">
+        <type full="Rebelo\At\QRCode\float|null" namespace="Rebelo\At\QRCode" name="float|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setHash" start="1383" end="1395" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: Q&lt;br&gt; 4 Hash characters&lt;br&gt;"/>
+      <param description="The 4 Hash characters" type="string" variable="$hash"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="hash" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getHash" start="1402" end="1408" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: Q&lt;br&gt; 4 Hash characters"/>
+      <return description="The 4 Hash characters" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setCertificateNo" start="1417" end="1429" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: R&lt;br&gt; Program certificate number&lt;br&gt;"/>
+      <param description="The Certificate number" type="int" variable="$number"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="number" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCertificateNo" start="1436" end="1442" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: R&lt;br&gt; Program certificate number"/>
+      <return description="Program certificate number" type="object">
+        <type full="Rebelo\At\QRCode\int|null" namespace="Rebelo\At\QRCode" name="int|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setOtherInfo" start="1455" end="1471" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: S&lt;br&gt; Other info&lt;br&gt; Field of free filling, in which, for example, information for payment can be indicated (ex: from IBAN or Ref MB, with the tab «;»).">This field cannot contain the asterisk character (*).</description>
+      <param description="Other info" type="string" variable="$info"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+    </docblock>
+    <parameter name="info" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOtherInfo" start="1482" end="1488" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Field: S&lt;br&gt; Other info&lt;br&gt; Field of free filling, in which, for example, information for payment can be indicated (ex: from IBAN or Ref MB, with the tab «;»).">This field cannot contain the asterisk character (*).</description>
+      <return description="Info" type="object">
+        <type full="Rebelo\At\QRCode\string|null" namespace="Rebelo\At\QRCode" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getQrCodeString" start="1496" end="1517" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get QrCode string"/>
+      <param description="Check fields" type="object" variable="$check">
+        <type full="Rebelo\At\QRCode\bool" namespace="Rebelo\At\QRCode" name="bool"/>
+      </param>
+      <throws type="object">
+        <type full="\Rebelo\At\QRCode\QRCodeException" namespace="\Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+      <return type="string"/>
+    </docblock>
+    <parameter name="check" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="iterateCode" start="1526" end="1934" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="iterarte over the string tokens to check if are correct."/>
+      <param description="The QrCode string" type="string" variable="$qrCodeStr"/>
+      <param description="If true properties of Builder wil be setted, used for parse a string" type="object" variable="$setValue">
+        <type full="Rebelo\At\QRCode\bool" namespace="Rebelo\At\QRCode" name="bool"/>
+      </param>
+      <throws type="object">
+        <type full="Rebelo\At\QRCode\QRCodeException" namespace="Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+      <return type="object">
+        <type full="Rebelo\At\QRCode\void" namespace="Rebelo\At\QRCode" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="qrCodeStr" byreference="false" type="{unknown}"/>
+    <parameter name="setValue" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Field A, Index 0" line="1535"/>
+      <comment value="Field B, Index 1" line="1561"/>
+      <comment value="Field C, Index 2" line="1583"/>
+      <comment value="@phpstan-ignore-next-line" line="1584"/>
+      <comment value="Field D, Index 3" line="1606"/>
+      <comment value="@phpstan-ignore-next-line" line="1607"/>
+      <comment value="Field E, Index 4" line="1629"/>
+      <comment value="@phpstan-ignore-next-line" line="1630"/>
+      <comment value="Field F, Index 5" line="1652"/>
+      <comment value="@phpstan-ignore-next-line" line="1653"/>
+      <comment value="Field G, Index 6" line="1675"/>
+      <comment value="@phpstan-ignore-next-line" line="1676"/>
+      <comment value="Field H, Index 7" line="1698"/>
+      <comment value="@phpstan-ignore-next-line" line="1699"/>
+      <comment value="Field I, Index 8" line="1721"/>
+      <comment value="@phpstan-ignore-next-line" line="1722"/>
+    </inline>
+  </method>
+  <method name="setIterateRegionPT" start="1950" end="2138" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Iterate over the Country Region fiscal zone PT -&gt; fields I2-I8"/>
+      <param description="string&gt; $spl the array to iterat over the field I2-I8" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;string" namespace="Rebelo\At\QRCode" name="array&lt;string"/>
+      </param>
+      <param description="string&gt; $tokens the tokens" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;int" namespace="Rebelo\At\QRCode" name="array&lt;int"/>
+      </param>
+      <param description="Error message template" type="string" variable="$error"/>
+      <param description="Stop error message template" type="string" variable="$errorStop"/>
+      <param description="Parsed message template" type="string" variable="$msgParsed"/>
+      <param description="Set the properties values (parse)" type="boolean" variable="$setValue"/>
+      <param description="Variable that handle the last field name" type="string" variable="$field"/>
+      <param description="Variable that handle the last field value" type="string" variable="$value"/>
+      <throws type="object">
+        <type full="Rebelo\At\QRCode\QRCodeException" namespace="Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+      <return type="object">
+        <type full="Rebelo\At\QRCode\void" namespace="Rebelo\At\QRCode" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="spl" byreference="true" type="{unknown}"/>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="error" byreference="false" type="{unknown}"/>
+    <parameter name="errorStop" byreference="false" type="{unknown}"/>
+    <parameter name="msgParsed" byreference="false" type="{unknown}"/>
+    <parameter name="setValue" byreference="false" type="{unknown}"/>
+    <parameter name="field" byreference="true" type="{unknown}"/>
+    <parameter name="value" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="setIterateRegionPTAC" start="2154" end="2342" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Iterate over the Country Region fiscal zone PT-AC -&gt; fields J2-J8"/>
+      <param description="string&gt; $spl the array to iterat over the field J2-J8" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;string" namespace="Rebelo\At\QRCode" name="array&lt;string"/>
+      </param>
+      <param description="string&gt; $tokens the tokens" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;int" namespace="Rebelo\At\QRCode" name="array&lt;int"/>
+      </param>
+      <param description="Error message template" type="string" variable="$error"/>
+      <param description="Stop error message template" type="string" variable="$errorStop"/>
+      <param description="Parsed message template" type="string" variable="$msgParsed"/>
+      <param description="Set the properties values (parse)" type="boolean" variable="$setValue"/>
+      <param description="Variable that handle the last field name" type="string" variable="$field"/>
+      <param description="Variable that handle the last field value" type="string" variable="$value"/>
+      <throws type="object">
+        <type full="Rebelo\At\QRCode\QRCodeException" namespace="Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+      <return type="object">
+        <type full="Rebelo\At\QRCode\void" namespace="Rebelo\At\QRCode" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="spl" byreference="true" type="{unknown}"/>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="error" byreference="false" type="{unknown}"/>
+    <parameter name="errorStop" byreference="false" type="{unknown}"/>
+    <parameter name="msgParsed" byreference="false" type="{unknown}"/>
+    <parameter name="setValue" byreference="false" type="{unknown}"/>
+    <parameter name="field" byreference="true" type="{unknown}"/>
+    <parameter name="value" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="setIterateRegionPTMA" start="2358" end="2545" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Iterate over the Country Region fiscal zone PT-MA -&gt; fields K2-K8"/>
+      <param description="string&gt; $spl the array to iterat over the field J2-J8" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;string" namespace="Rebelo\At\QRCode" name="array&lt;string"/>
+      </param>
+      <param description="string&gt; $tokens the tokens" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;int" namespace="Rebelo\At\QRCode" name="array&lt;int"/>
+      </param>
+      <param description="Error message template" type="string" variable="$error"/>
+      <param description="Stop error message template" type="string" variable="$errorStop"/>
+      <param description="Parsed message template" type="string" variable="$msgParsed"/>
+      <param description="Set the properties values (parse)" type="boolean" variable="$setValue"/>
+      <param description="Variable that handle the last field name" type="string" variable="$field"/>
+      <param description="Variable that handle the last field value" type="string" variable="$value"/>
+      <throws type="object">
+        <type full="Rebelo\At\QRCode\QRCodeException" namespace="Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+      <return type="object">
+        <type full="Rebelo\At\QRCode\void" namespace="Rebelo\At\QRCode" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="spl" byreference="true" type="{unknown}"/>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="error" byreference="false" type="{unknown}"/>
+    <parameter name="errorStop" byreference="false" type="{unknown}"/>
+    <parameter name="msgParsed" byreference="false" type="{unknown}"/>
+    <parameter name="setValue" byreference="false" type="{unknown}"/>
+    <parameter name="field" byreference="true" type="{unknown}"/>
+    <parameter name="value" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="splitFieldValue" start="2555" end="2568" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Split teh field name and value"/>
+      <param type="string" variable="$string"/>
+      <param description="The returned field name (passed as refernce)" type="string" variable="$field"/>
+      <param description="The returned field value (passed as refernce)" type="string" variable="$value"/>
+      <throws type="object">
+        <type full="Rebelo\At\QRCode\QRCodeException" namespace="Rebelo\At\QRCode" name="QRCodeException"/>
+      </throws>
+      <return type="object">
+        <type full="Rebelo\At\QRCode\void" namespace="Rebelo\At\QRCode" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="field" byreference="true" type="{unknown}"/>
+    <parameter name="value" byreference="true" type="{unknown}"/>
+    <inline>
+      <comment value="@phpstan-ignore-next-line" line="2564"/>
+    </inline>
+  </method>
+  <method name="parseString" start="2575" end="2581" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Parse a QRCode string"/>
+      <param type="string" variable="$string"/>
+      <return type="object">
+        <type full="\Rebelo\At\QRCode\Builder" namespace="\Rebelo\At\QRCode" name="Builder"/>
+      </return>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="buildImage" start="2588" end="2597" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Build the QRcode image as png"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="Rebelo\At\QRCode\void" namespace="Rebelo\At\QRCode" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+</class>

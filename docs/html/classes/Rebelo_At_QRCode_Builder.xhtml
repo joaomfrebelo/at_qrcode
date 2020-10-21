@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Rebelo\At\QRCode\Builder</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Rebelo_At_QRCode">Rebelo\At\QRCode</a>
+          </li>
+          <li class="separator">Builder</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Rebelo/At/QRCode/Builder.php.xhtml#line18">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Rebelo\At\QRCode\</small>Builder</h1>
+        <h4>The Cud class</h4>
+        <p/>
+        <ul>
+          <li>Author: João Rebelo&gt;</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Builder
+            {<br/><ul class="none"><li>// members</li><li>public static integer <a href="#members">$size</a> =
+                        2;
+                    </li><li>public static integer <a href="#members">$margin</a> =
+                        2;
+                    </li><li>public static int <a href="#members">$level</a> =
+                        QR_ECLEVEL_M;
+                    </li><li>protected <span title="Rebelo\At\QRCode\array&lt;int">array&lt;int</span> <a href="#members">$properties</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/__construct.xhtml">__construct</a>()
+                    </li><li>public array&lt;int <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getProperties.xhtml">getProperties</a>()
+                    </li><li>public static string <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/formatFloat.xhtml">formatFloat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setIssuerTin.xhtml">setIssuerTin</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getIssuerTin.xhtml">getIssuerTin</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setBuyerTin.xhtml">setBuyerTin</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getBuyerTin.xhtml">getBuyerTin</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setCountryCode.xhtml">setCountryCode</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getCountryCode.xhtml">getCountryCode</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocType.xhtml">setDocType</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getDocType.xhtml">getDocType</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocStatus.xhtml">setDocStatus</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getDocStatus.xhtml">getDocStatus</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocDate.xhtml">setDocDate</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getDocDate.xhtml">getDocDate</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocNo.xhtml">setDocNo</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getDocNo.xhtml">getDocNo</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setAtcud.xhtml">setAtcud</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getAtcud.xhtml">getAtcud</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocWithoutVat.xhtml">setDocWithoutVat</a>()
+                    </li><li>public bool|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/isDocWithoutVat.xhtml">isDocWithoutVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTExemptedBaseVat.xhtml">setPTExemptedBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTExemptedBaseVat.xhtml">getPTExemptedBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTReducedBaseVat.xhtml">setPTReducedBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTReducedBaseVat.xhtml">getPTReducedBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTReducedTotalVat.xhtml">setPTReducedTotalVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTReducedTotalVat.xhtml">getPTReducedTotalVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTIntermediateBaseVat.xhtml">setPTIntermediateBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTIntermediateBaseVat.xhtml">getPTIntermediateBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTIntermediateTotalVat.xhtml">setPTIntermediateTotalVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTIntermediateTotalVat.xhtml">getPTIntermediateTotalVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTNormalBaseVat.xhtml">setPTNormalBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTNormalBaseVat.xhtml">getPTNormalBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTNormalTotalVat.xhtml">setPTNormalTotalVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTNormalTotalVat.xhtml">getPTNormalTotalVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACExemptedBaseVat.xhtml">setPTACExemptedBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACExemptedBaseVat.xhtml">getPTACExemptedBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACReducedBaseVat.xhtml">setPTACReducedBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACReducedBaseVat.xhtml">getPTACReducedBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACReducedTotalVat.xhtml">setPTACReducedTotalVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACReducedTotalVat.xhtml">getPTACReducedTotalVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACIntermediateBaseVat.xhtml">setPTACIntermediateBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACIntermediateBaseVat.xhtml">getPTACIntermediateBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACIntermediateTotalVat.xhtml">setPTACIntermediateTotalVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACIntermediateTotalVat.xhtml">getPTACIntermediateTotalVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACNormalBaseVat.xhtml">setPTACNormalBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACNormalBaseVat.xhtml">getPTACNormalBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACNormalTotalVat.xhtml">setPTACNormalTotalVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACNormalTotalVat.xhtml">getPTACNormalTotalVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAExemptedBaseVat.xhtml">setPTMAExemptedBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAExemptedBaseVat.xhtml">getPTMAExemptedBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAReducedBaseVat.xhtml">setPTMAReducedBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAReducedBaseVat.xhtml">getPTMAReducedBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAReducedTotalVat.xhtml">setPTMAReducedTotalVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAReducedTotalVat.xhtml">getPTMAReducedTotalVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAIntermediateBaseVat.xhtml">setPTMAIntermediateBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAIntermediateBaseVat.xhtml">getPTMAIntermediateBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAIntermediateTotalVat.xhtml">setPTMAIntermediateTotalVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAIntermediateTotalVat.xhtml">getPTMAIntermediateTotalVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMANormalBaseVat.xhtml">setPTMANormalBaseVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMANormalBaseVat.xhtml">getPTMANormalBaseVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMANormalTotalVat.xhtml">setPTMANormalTotalVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMANormalTotalVat.xhtml">getPTMANormalTotalVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setTotalNonVat.xhtml">setTotalNonVat</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getTotalNonVat.xhtml">getTotalNonVat</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setTotalStampTax.xhtml">setTotalStampTax</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getTotalStampTax.xhtml">getTotalStampTax</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setTaxPayable.xhtml">setTaxPayable</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getTaxPayable.xhtml">getTaxPayable</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setGrossTotal.xhtml">setGrossTotal</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getGrossTotal.xhtml">getGrossTotal</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setWithholdingTaxAmount.xhtml">setWithholdingTaxAmount</a>()
+                    </li><li>public float|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getWithholdingTaxAmount.xhtml">getWithholdingTaxAmount</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setHash.xhtml">setHash</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getHash.xhtml">getHash</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setCertificateNo.xhtml">setCertificateNo</a>()
+                    </li><li>public int|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getCertificateNo.xhtml">getCertificateNo</a>()
+                    </li><li>public Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setOtherInfo.xhtml">setOtherInfo</a>()
+                    </li><li>public string|null <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getOtherInfo.xhtml">getOtherInfo</a>()
+                    </li><li>public string <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getQrCodeString.xhtml">getQrCodeString</a>()
+                    </li><li>protected void <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/iterateCode.xhtml">iterateCode</a>()
+                    </li><li>protected void <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setIterateRegionPT.xhtml">setIterateRegionPT</a>()
+                    </li><li>protected void <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setIterateRegionPTAC.xhtml">setIterateRegionPTAC</a>()
+                    </li><li>protected void <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setIterateRegionPTMA.xhtml">setIterateRegionPTMA</a>()
+                    </li><li>protected void <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/splitFieldValue.xhtml">splitFieldValue</a>()
+                    </li><li>public static Builder <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/parseString.xhtml">parseString</a>()
+                    </li><li>public void <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/buildImage.xhtml">buildImage</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="properties"><strong>$properties</strong>
+                —
+                <a title="Rebelo\At\QRCode\array&lt;int" href="../classes/Rebelo_At_QRCode_array&lt;int.xhtml">Rebelo\At\QRCode\array&lt;int</a></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="level"><strong>$level</strong>
+                —
+                int<br/><span class="indent">QRcode ECC level</span></li>
+            <li id="margin"><strong>$margin</strong>
+                —
+                int<br/><span class="indent">Code margin</span></li>
+            <li id="size"><strong>$size</strong>
+                —
+                int<br/><span class="indent">Code size</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="iterateCode"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/iterateCode.xhtml">iterateCode()</a>
+                — iterarte over the string tokens to check if are correct.</li>
+            <li id="setIterateRegionPT"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setIterateRegionPT.xhtml">setIterateRegionPT()</a>
+                — Iterate over the Country Region fiscal zone PT -&gt; fields I2-I8</li>
+            <li id="setIterateRegionPTAC"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setIterateRegionPTAC.xhtml">setIterateRegionPTAC()</a>
+                — Iterate over the Country Region fiscal zone PT-AC -&gt; fields J2-J8</li>
+            <li id="setIterateRegionPTMA"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setIterateRegionPTMA.xhtml">setIterateRegionPTMA()</a>
+                — Iterate over the Country Region fiscal zone PT-MA -&gt; fields K2-K8</li>
+            <li id="splitFieldValue"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/splitFieldValue.xhtml">splitFieldValue()</a>
+                — Split teh field name and value</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="buildImage"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/buildImage.xhtml">buildImage()</a>
+                — Build the QRcode image as png</li>
+            <li id="formatFloat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/formatFloat.xhtml">formatFloat()</a>
+                — Format the float to string</li>
+            <li id="getAtcud"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getAtcud.xhtml">getAtcud()</a>
+                — Field: H (This field is mandatory)&lt;br&gt; ATCUD&lt;br&gt; Ex: 'CSDF7T5H-35'&lt;br&gt;</li>
+            <li id="getBuyerTin"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getBuyerTin.xhtml">getBuyerTin()</a>
+                — Field: B (This field is mandatory)&lt;br&gt; Buyer's TIN (NIF)&lt;br&gt; The buyer's TIN (NIF)</li>
+            <li id="getCertificateNo"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getCertificateNo.xhtml">getCertificateNo()</a>
+                — Field: R&lt;br&gt; Program certificate number</li>
+            <li id="getCountryCode"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getCountryCode.xhtml">getCountryCode()</a>
+                — Field: C (This field is mandatory)&lt;br&gt; Buyer's Country&lt;br&gt;</li>
+            <li id="getDocDate"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getDocDate.xhtml">getDocDate()</a>
+                — Field: F (This field is mandatory)&lt;br&gt; Document date&lt;br&gt; Format 'YYYYMMDD'&lt;br&gt;</li>
+            <li id="getDocNo"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getDocNo.xhtml">getDocNo()</a>
+                — Field: G (This field is mandatory)&lt;br&gt; Unique identification of the document&lt;br&gt; According to the type of SAF-T (PT).&lt;br&gt; Ex: 'FT A/999'&lt;br&gt;</li>
+            <li id="getDocStatus"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getDocStatus.xhtml">getDocStatus()</a>
+                — Field: E (This field is mandatory)&lt;br&gt; Document status&lt;br&gt; According to the type of SAF-T (PT).&lt;br&gt;</li>
+            <li id="getDocType"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getDocType.xhtml">getDocType()</a>
+                — Field: D (This field is mandatory)&lt;br&gt; Document type&lt;br&gt; According to the type of SAF-T (PT).&lt;br&gt;</li>
+            <li id="getGrossTotal"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getGrossTotal.xhtml">getGrossTotal()</a>
+                — Field: O&lt;br&gt; Gross total&lt;br&gt; Total document value - GrossTotal field of SAF-T (PT).</li>
+            <li id="getHash"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getHash.xhtml">getHash()</a>
+                — Field: Q&lt;br&gt; 4 Hash characters</li>
+            <li id="getIssuerTin"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getIssuerTin.xhtml">getIssuerTin()</a>
+                — Field: A (This field is mandatory)&lt;br&gt; Issuer TIN (NIF)&lt;br&gt; The issuer's TIN (NIF) without Country prefix&lt;br&gt;</li>
+            <li id="getOtherInfo"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getOtherInfo.xhtml">getOtherInfo()</a>
+                — Field: S&lt;br&gt; Other info&lt;br&gt; Field of free filling, in which, for example, information for payment can be indicated (ex: from IBAN or Ref MB, with the tab «;»).</li>
+            <li id="getPTACExemptedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACExemptedBaseVat.xhtml">getPTACExemptedBaseVat()</a>
+                — Field: J2&lt;br&gt; VAT-exempt tax base of PTAC fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty).</li>
+            <li id="getPTACIntermediateBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACIntermediateBaseVat.xhtml">getPTACIntermediateBaseVat()</a>
+                — Field: J5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate.</li>
+            <li id="getPTACIntermediateTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACIntermediateTotalVat.xhtml">getPTACIntermediateTotalVat()</a>
+                — Field: J6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;</li>
+            <li id="getPTACNormalBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACNormalBaseVat.xhtml">getPTACNormalBaseVat()</a>
+                — Field: J7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate.</li>
+            <li id="getPTACNormalTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACNormalTotalVat.xhtml">getPTACNormalTotalVat()</a>
+                — Field: J8&lt;br&gt; Total VAT at normal rate&lt;br&gt;</li>
+            <li id="getPTACReducedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACReducedBaseVat.xhtml">getPTACReducedBaseVat()</a>
+                — Field: J3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate.</li>
+            <li id="getPTACReducedTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTACReducedTotalVat.xhtml">getPTACReducedTotalVat()</a>
+                — Field: J4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;</li>
+            <li id="getPTExemptedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTExemptedBaseVat.xhtml">getPTExemptedBaseVat()</a>
+                — Field: I2&lt;br&gt; VAT-exempt tax base of PT fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty).</li>
+            <li id="getPTIntermediateBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTIntermediateBaseVat.xhtml">getPTIntermediateBaseVat()</a>
+                — Field: I5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate.</li>
+            <li id="getPTIntermediateTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTIntermediateTotalVat.xhtml">getPTIntermediateTotalVat()</a>
+                — Field: I6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;</li>
+            <li id="getPTMAExemptedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAExemptedBaseVat.xhtml">getPTMAExemptedBaseVat()</a>
+                — Field: K2&lt;br&gt; VAT-exempt tax base of PTMA fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty).</li>
+            <li id="getPTMAIntermediateBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAIntermediateBaseVat.xhtml">getPTMAIntermediateBaseVat()</a>
+                — Field: K5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate.</li>
+            <li id="getPTMAIntermediateTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAIntermediateTotalVat.xhtml">getPTMAIntermediateTotalVat()</a>
+                — Field: K6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;</li>
+            <li id="getPTMANormalBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMANormalBaseVat.xhtml">getPTMANormalBaseVat()</a>
+                — Field: K7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate.</li>
+            <li id="getPTMANormalTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMANormalTotalVat.xhtml">getPTMANormalTotalVat()</a>
+                — Field: K8&lt;br&gt; Total VAT at normal rate&lt;br&gt;</li>
+            <li id="getPTMAReducedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAReducedBaseVat.xhtml">getPTMAReducedBaseVat()</a>
+                — Field: K3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate.</li>
+            <li id="getPTMAReducedTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTMAReducedTotalVat.xhtml">getPTMAReducedTotalVat()</a>
+                — Field: K4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;</li>
+            <li id="getPTNormalBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTNormalBaseVat.xhtml">getPTNormalBaseVat()</a>
+                — Field: I7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate.</li>
+            <li id="getPTNormalTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTNormalTotalVat.xhtml">getPTNormalTotalVat()</a>
+                — Field: I8&lt;br&gt; Total VAT at normal rate&lt;br&gt;</li>
+            <li id="getPTReducedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTReducedBaseVat.xhtml">getPTReducedBaseVat()</a>
+                — Field: I3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate.</li>
+            <li id="getPTReducedTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getPTReducedTotalVat.xhtml">getPTReducedTotalVat()</a>
+                — Field: I4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;</li>
+            <li id="getProperties"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getProperties.xhtml">getProperties()</a>
+                — Get all setted properties, all properties are returned as string</li>
+            <li id="getQrCodeString"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getQrCodeString.xhtml">getQrCodeString()</a>
+                — Get QrCode string</li>
+            <li id="getTaxPayable"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getTaxPayable.xhtml">getTaxPayable()</a>
+                — Field: N&lt;br&gt; TaxPayable&lt;br&gt; Total value of VAT and Stamp Tax - TaxPayable field of SAF-T (PT)</li>
+            <li id="getTotalNonVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getTotalNonVat.xhtml">getTotalNonVat()</a>
+                — Field: L&lt;br&gt; Not subject / non-taxable in VAT (IVA)&lt;br&gt; Total value related to non-subject / non-taxable transactions in VAT.</li>
+            <li id="getTotalStampTax"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getTotalStampTax.xhtml">getTotalStampTax()</a>
+                — Field: M&lt;br&gt; Stamp tax&lt;br&gt; Total value of stamp tax.</li>
+            <li id="getWithholdingTaxAmount"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/getWithholdingTaxAmount.xhtml">getWithholdingTaxAmount()</a>
+                — Field: P&lt;br&gt; Withholding Tax Amount</li>
+            <li id="isDocWithoutVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/isDocWithoutVat.xhtml">isDocWithoutVat()</a>
+                — Field: I1&lt;br&gt; Verify if is a document without an indication of the VAT rate, which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)</li>
+            <li id="parseString"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/parseString.xhtml">parseString()</a>
+                — Parse a QRCode string</li>
+            <li id="setAtcud"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setAtcud.xhtml">setAtcud()</a>
+                — Field: H (This field is mandatory)&lt;br&gt; ATCUD&lt;br&gt; Ex: 'CSDF7T5H-35'&lt;br&gt;</li>
+            <li id="setBuyerTin"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setBuyerTin.xhtml">setBuyerTin()</a>
+                — Field: B (This field is mandatory)&lt;br&gt; Buyer's TIN (NIF)&lt;br&gt; Fill in with the buyer's TIN. When issuing a document, the “Final Consumer” fill in with 999999990.&lt;br&gt;</li>
+            <li id="setCertificateNo"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setCertificateNo.xhtml">setCertificateNo()</a>
+                — Field: R&lt;br&gt; Program certificate number&lt;br&gt;</li>
+            <li id="setCountryCode"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setCountryCode.xhtml">setCountryCode()</a>
+                — Field: C (This field is mandatory)&lt;br&gt; Buyer's Country&lt;br&gt; Fill in with the buyer's country code, as the Customers SAFT table.&lt;br&gt;</li>
+            <li id="setDocDate"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocDate.xhtml">setDocDate()</a>
+                — Field: F (This field is mandatory)&lt;br&gt; Document date&lt;br&gt; Use the format 'YYYYMMDD'&lt;br&gt;</li>
+            <li id="setDocNo"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocNo.xhtml">setDocNo()</a>
+                — Field: G (This field is mandatory)&lt;br&gt; Unique identification of the document&lt;br&gt; Fill in according to the type of SAF-T (PT).&lt;br&gt; Ex: 'FT A/999'&lt;br&gt;</li>
+            <li id="setDocStatus"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocStatus.xhtml">setDocStatus()</a>
+                — Field: E (This field is mandatory)&lt;br&gt; Document status&lt;br&gt; Fill in according to the type of SAF-T (PT).&lt;br&gt;</li>
+            <li id="setDocType"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocType.xhtml">setDocType()</a>
+                — Field: D (This field is mandatory)&lt;br&gt; Document type&lt;br&gt; Fill in according to the type of SAF-T (PT).&lt;br&gt;</li>
+            <li id="setDocWithoutVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setDocWithoutVat.xhtml">setDocWithoutVat()</a>
+                — Field: I1&lt;br&gt; Invoke only this method if the case of a document without an indication of the VAT rate, which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)</li>
+            <li id="setGrossTotal"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setGrossTotal.xhtml">setGrossTotal()</a>
+                — Field: O&lt;br&gt; Gross total&lt;br&gt; Total document value - GrossTotal field of SAF-T (PT).</li>
+            <li id="setHash"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setHash.xhtml">setHash()</a>
+                — Field: Q&lt;br&gt; 4 Hash characters&lt;br&gt;</li>
+            <li id="setIssuerTin"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setIssuerTin.xhtml">setIssuerTin()</a>
+                — Field: A (This field is mandatory)&lt;br&gt; Issuer TIN (NIF)&lt;br&gt; Fill in with the issuer's TIN (NIF) without Country prefix&lt;br&gt;</li>
+            <li id="setOtherInfo"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setOtherInfo.xhtml">setOtherInfo()</a>
+                — Field: S&lt;br&gt; Other info&lt;br&gt; Field of free filling, in which, for example, information for payment can be indicated (ex: from IBAN or Ref MB, with the tab «;»).</li>
+            <li id="setPTACExemptedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACExemptedBaseVat.xhtml">setPTACExemptedBaseVat()</a>
+                — Field: J2&lt;br&gt; VAT-exempt tax base of PTAC fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty).</li>
+            <li id="setPTACIntermediateBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACIntermediateBaseVat.xhtml">setPTACIntermediateBaseVat()</a>
+                — Field: J5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate.</li>
+            <li id="setPTACIntermediateTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACIntermediateTotalVat.xhtml">setPTACIntermediateTotalVat()</a>
+                — Field: J6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;</li>
+            <li id="setPTACNormalBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACNormalBaseVat.xhtml">setPTACNormalBaseVat()</a>
+                — Field: J7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate.</li>
+            <li id="setPTACNormalTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACNormalTotalVat.xhtml">setPTACNormalTotalVat()</a>
+                — Field: J8&lt;br&gt; Total VAT at normal rate&lt;br&gt;</li>
+            <li id="setPTACReducedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACReducedBaseVat.xhtml">setPTACReducedBaseVat()</a>
+                — Field: J3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate.</li>
+            <li id="setPTACReducedTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTACReducedTotalVat.xhtml">setPTACReducedTotalVat()</a>
+                — Field: J4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;</li>
+            <li id="setPTExemptedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTExemptedBaseVat.xhtml">setPTExemptedBaseVat()</a>
+                — Field: I2&lt;br&gt; VAT-exempt tax base of PT fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty).</li>
+            <li id="setPTIntermediateBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTIntermediateBaseVat.xhtml">setPTIntermediateBaseVat()</a>
+                — Field: I5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate.</li>
+            <li id="setPTIntermediateTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTIntermediateTotalVat.xhtml">setPTIntermediateTotalVat()</a>
+                — Field: I6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;</li>
+            <li id="setPTMAExemptedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAExemptedBaseVat.xhtml">setPTMAExemptedBaseVat()</a>
+                — Field: K2&lt;br&gt; VAT-exempt tax base of PTMA fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty).</li>
+            <li id="setPTMAIntermediateBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAIntermediateBaseVat.xhtml">setPTMAIntermediateBaseVat()</a>
+                — Field: K5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate.</li>
+            <li id="setPTMAIntermediateTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAIntermediateTotalVat.xhtml">setPTMAIntermediateTotalVat()</a>
+                — Field: K6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;</li>
+            <li id="setPTMANormalBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMANormalBaseVat.xhtml">setPTMANormalBaseVat()</a>
+                — Field: K7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate.</li>
+            <li id="setPTMANormalTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMANormalTotalVat.xhtml">setPTMANormalTotalVat()</a>
+                — Field: K8&lt;br&gt; Total VAT at normal rate&lt;br&gt;</li>
+            <li id="setPTMAReducedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAReducedBaseVat.xhtml">setPTMAReducedBaseVat()</a>
+                — Field: K3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate.</li>
+            <li id="setPTMAReducedTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTMAReducedTotalVat.xhtml">setPTMAReducedTotalVat()</a>
+                — Field: K4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;</li>
+            <li id="setPTNormalBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTNormalBaseVat.xhtml">setPTNormalBaseVat()</a>
+                — Field: I7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate.</li>
+            <li id="setPTNormalTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTNormalTotalVat.xhtml">setPTNormalTotalVat()</a>
+                — Field: I8&lt;br&gt; Total VAT at normal rate&lt;br&gt;</li>
+            <li id="setPTReducedBaseVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTReducedBaseVat.xhtml">setPTReducedBaseVat()</a>
+                — Field: I3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate.</li>
+            <li id="setPTReducedTotalVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setPTReducedTotalVat.xhtml">setPTReducedTotalVat()</a>
+                — Field: I4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;</li>
+            <li id="setTaxPayable"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setTaxPayable.xhtml">setTaxPayable()</a>
+                — Field: N&lt;br&gt; TaxPayable&lt;br&gt; Total value of VAT and Stamp Tax - TaxPayable field of SAF-T (PT)</li>
+            <li id="setTotalNonVat"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setTotalNonVat.xhtml">setTotalNonVat()</a>
+                — Field: L&lt;br&gt; Not subject / non-taxable in VAT (IVA)&lt;br&gt; Total value related to non-subject / non-taxable transactions in VAT.</li>
+            <li id="setTotalStampTax"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setTotalStampTax.xhtml">setTotalStampTax()</a>
+                — Field: M&lt;br&gt; Stamp tax&lt;br&gt; Total value of stamp tax.</li>
+            <li id="setWithholdingTaxAmount"><a title="Rebelo\At\QRCode\Builder" href="../classes/Rebelo_At_QRCode_Builder/setWithholdingTaxAmount.xhtml">setWithholdingTaxAmount()</a>
+                — Field: P&lt;br&gt; Withholding Tax Amount&lt;br&gt;</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0 - Copyright (C) 2010 - 2020 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

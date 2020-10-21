@@ -19,7 +19,7 @@
          timeoutForMediumTests="10"
          timeoutForLargeTests="60"
          verbose="true"
-         bootstrap="bootstrap.php">
+         bootstrap="./test/bootstrap.php">
     <php>
         <ini name="display_errors" value="On" />
         <ini name="display_startup_errors" value="On" />
@@ -27,7 +27,7 @@
     </php>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">../src</directory>
+            <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
     <logging>

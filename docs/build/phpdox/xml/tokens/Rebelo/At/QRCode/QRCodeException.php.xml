@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode" file="QRCodeException.php" realpath="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode/QRCodeException.php" size="644" time="2020-10-18T20:47:57+01:00" unixtime="1603050477" sha1="5b5651fcb156c50b7f26e7c7ed4a6ccaaad46544" relative="Rebelo/At/QRCode/QRCodeException.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="3">
+    <token name="T_DOC_COMMENT"> * MIT License</token>
+  </line>
+  <line no="4">
+    <token name="T_DOC_COMMENT"> * @license https://github.com/joaomfrebelo/at_qrcode/blob/master/LICENSE</token>
+  </line>
+  <line no="5">
+    <token name="T_DOC_COMMENT"> * Copyright (c) 2020 Jo&#xE3;o Rebelo</token>
+  </line>
+  <line no="6">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="7">
+    <token name="T_COMMENT">//declare(strict_types=1);</token>
+  </line>
+  <line no="8"/>
+  <line no="9">
+    <token name="T_NAMESPACE">namespace</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Rebelo</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">At</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">QRCode</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="10"/>
+  <line no="11">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="12">
+    <token name="T_DOC_COMMENT"> * CudException</token>
+  </line>
+  <line no="13">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="14">
+    <token name="T_DOC_COMMENT"> * @author Jo&#xE3;o Rebelo</token>
+  </line>
+  <line no="15">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="16">
+    <token name="T_CLASS">class</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">QRCodeException</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_EXTENDS">extends</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Exception</token>
+  </line>
+  <line no="17">
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="18">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="19">
+    <token name="T_DOC_COMMENT">     * </token>
+  </line>
+  <line no="20">
+    <token name="T_DOC_COMMENT">     * @param string $message</token>
+  </line>
+  <line no="21">
+    <token name="T_DOC_COMMENT">     * @param int $code</token>
+  </line>
+  <line no="22">
+    <token name="T_DOC_COMMENT">     * @param \Throwable $previous</token>
+  </line>
+  <line no="23">
+    <token name="T_DOC_COMMENT">     * @return void</token>
+  </line>
+  <line no="24">
+    <token name="T_DOC_COMMENT">     */</token>
+  </line>
+  <line no="25">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PUBLIC">public</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">__construct</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$message</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">""</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$code</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Throwable</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$previous</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">NULL</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="26">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="27">
+    <token name="T_WHITESPACE">        </token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Logger</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">getLogger</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">get_class</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$this</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">error</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$message</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="28">
+    <token name="T_WHITESPACE">        </token>
+    <token name="T_STRING">parent</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">__construct</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$message</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$code</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$previous</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="29">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="30"/>
+  <line no="31">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+</source>

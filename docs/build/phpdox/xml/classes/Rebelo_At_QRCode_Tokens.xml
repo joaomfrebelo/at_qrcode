@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Rebelo\At\QRCode\Tokens" namespace="Rebelo\At\QRCode" name="Tokens" abstract="false" final="false" start="16" end="352">
+  <file path="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode" file="Tokens.php" realpath="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode/Tokens.php" size="8363" time="2020-10-19T21:32:00+01:00" unixtime="1603139520" sha1="b53215a5bdebe3acd6671ca1c58305ad7a413c95" relative="Rebelo/At/QRCode/Tokens.php"/>
+  <docblock>
+    <description compact="Tokens"/>
+    <author value="João Rebelo"/>
+  </docblock>
+  <constant type="string" name="T_DELIMITER" value="&quot;*&quot;">
+    <docblock>
+      <description compact="The delimiter char"/>
+    </docblock>
+  </constant>
+  <constant type="string" name="T_FIELD_SEP" value="&quot;:&quot;">
+    <docblock>
+      <description compact="Char that separetes the field name of the field value"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_ISSUER_TIN" value="0">
+    <docblock>
+      <description compact="Field A&lt;br&gt; The issuer's TIN (NIF)"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_BUYER_TIN" value="1">
+    <docblock>
+      <description compact="Field B&lt;br&gt; The buyer's TIN (NIF)"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_BUYER_COUNTRY" value="2">
+    <docblock>
+      <description compact="Field C&lt;br&gt; The buyer's country"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_DOC_TYPE" value="3">
+    <docblock>
+      <description compact="Field D&lt;br&gt; Document type (From SAFT-PT)"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_DOC_STATUS" value="4">
+    <docblock>
+      <description compact="Field E&lt;br&gt; Document status (From SAFT-PT)"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_DOC_DATE" value="5">
+    <docblock>
+      <description compact="Field F&lt;br&gt; Document date (Format 'YYYYMMDD')"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_DOC_NO" value="6">
+    <docblock>
+      <description compact="Field G&lt;br&gt; Document unique ID (Ex: FT A/999)"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_ATCUD" value="7">
+    <docblock>
+      <description compact="Field H&lt;br&gt; AT_QRCODE"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_FISCAL_REGION_PT" value="8">
+    <docblock>
+      <description compact="Field I1&lt;br&gt; Tax Country Region PT"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PT_EXEMPTED_BASE_IVA" value="9">
+    <docblock>
+      <description compact="Field I2&lt;br&gt; Tax Country Region PT VAT exempt tax base"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PT_REDUCED_BASE_IVA" value="10">
+    <docblock>
+      <description compact="Field I3&lt;br&gt; Tax Country Region PT VAT tax base at reduced rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PT_REDUCED_TOTAL_IVA" value="11">
+    <docblock>
+      <description compact="Field I4&lt;br&gt; Tax Country Region PT Total of tax base at reduced rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PT_INTERMEDIATE_BASE_IVA" value="12">
+    <docblock>
+      <description compact="Field I5&lt;br&gt; Tax Country Region PT VAT tax base at intermediate rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PT_INTERMEDIATE_TOTAL_IVA" value="13">
+    <docblock>
+      <description compact="Field I6&lt;br&gt; Tax Country Region PT Total of tax base at intermediate rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PT_NORMAL_BASE_IVA" value="14">
+    <docblock>
+      <description compact="Field I7&lt;br&gt; Tax Country Region PT VAT tax base at normal rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PT_NORMAL_TOTAL_IVA" value="15">
+    <docblock>
+      <description compact="Field I8&lt;br&gt; Tax Country Region PT Total of tax base at intermediate rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_FISCAL_REGION_PTAC" value="16">
+    <docblock>
+      <description compact="Field J1&lt;br&gt; Tax Country Region PTAC"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTAC_EXEMPTED_BASE_IVA" value="17">
+    <docblock>
+      <description compact="Field J2&lt;br&gt; Tax Country Region PTAC VAT exempt tax base"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTAC_REDUCED_BASE_IVA" value="18">
+    <docblock>
+      <description compact="Field J3&lt;br&gt; Tax Country Region PTAC VAT tax base at reduced rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTAC_REDUCED_TOTAL_IVA" value="19">
+    <docblock>
+      <description compact="Field J4&lt;br&gt; Tax Country Region PTAC Total of tax base at reduced rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTAC_INTERMEDIATE_BASE_IVA" value="20">
+    <docblock>
+      <description compact="Field J5&lt;br&gt; Tax Country Region PTAC VAT tax base at intermediate rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTAC_INTERMEDIATE_TOTAL_IVA" value="21">
+    <docblock>
+      <description compact="Field J6&lt;br&gt; Tax Country Region PTAC Total of tax base at intermediate rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTAC_NORMAL_BASE_IVA" value="22">
+    <docblock>
+      <description compact="Field J7&lt;br&gt; Tax Country Region PTAC VAT tax base at normal rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTAC_NORMAL_TOTAL_IVA" value="23">
+    <docblock>
+      <description compact="Field J8&lt;br&gt; Tax Country Region PTAC Total of tax base at intermediate rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_FISCAL_REGION_PTMA" value="24">
+    <docblock>
+      <description compact="Field K1&lt;br&gt; Tax Country Region PTMA"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTMA_EXEMPTED_BASE_IVA" value="25">
+    <docblock>
+      <description compact="Field K2&lt;br&gt; Tax Country Region PTMA VAT exempt tax base"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTMA_REDUCED_BASE_IVA" value="26">
+    <docblock>
+      <description compact="Field K3&lt;br&gt; Tax Country Region PTMA VAT tax base at reduced rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTMA_REDUCED_TOTAL_IVA" value="27">
+    <docblock>
+      <description compact="Field K4&lt;br&gt; Tax Country Region PTMA Total of tax base at reduced rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTMA_INTERMEDIATE_BASE_IVA" value="28">
+    <docblock>
+      <description compact="Field K5&lt;br&gt; Tax Country Region PTMA VAT tax base at intermediate rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTMA_INTERMEDIATE_TOTAL_IVA" value="29">
+    <docblock>
+      <description compact="Field K6&lt;br&gt; Tax Country Region PTMA Total of tax base at intermediate rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTMA_NORMAL_BASE_IVA" value="30">
+    <docblock>
+      <description compact="Field K7&lt;br&gt; Tax Country Region PTMA VAT tax base at normal rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_PTMA_NORMAL_TOTAL_IVA" value="31">
+    <docblock>
+      <description compact="Field K8&lt;br&gt; Tax Country Region PTMA Total of tax base at intermediate rate"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_TOTAL_NON_IVA" value="32">
+    <docblock>
+      <description compact="Field L&lt;br&gt; Total value related to non-subject / non-taxable transactions in VAT (IVA)."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_TOTAL_STAMP_TAX" value="33">
+    <docblock>
+      <description compact="Field M&lt;br&gt; Total of stamp tax."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_TAX_PAYABLE" value="34">
+    <docblock>
+      <description compact="Field N&lt;br&gt; Total value of Taxs (VAT (IVA) plus Stamp tax)."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_GROSS_TOTAL" value="35">
+    <docblock>
+      <description compact="Field O&lt;br&gt; Document gross total."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_WITHHOLDING_TAX_AMOUNT" value="36">
+    <docblock>
+      <description compact="Field P&lt;br&gt; Document gross total."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_HASH" value="37">
+    <docblock>
+      <description compact="Field Q&lt;br&gt; Sign hash (4 carateres of Hash)."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_CERTIFICATE" value="38">
+    <docblock>
+      <description compact="Field R&lt;br&gt; Software certification number."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="T_OTHER_INFO" value="39">
+    <docblock>
+      <description compact="Field R&lt;br&gt; Other information"/>
+    </docblock>
+  </constant>
+  <member name="fields" default="NULL" visibility="protected" static="true" line="293">
+    <docblock>
+      <description compact="The fields name"/>
+      <var description="string&gt; Name of the fields in the QRCode string" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;int" namespace="Rebelo\At\QRCode" name="array&lt;int"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="298" end="301" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Instanciate the tokenizer"/>
+    </docblock>
+  </constructor>
+  <method name="getTokens" start="307" end="351" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get the tokens"/>
+      <return description="string&gt;" type="object">
+        <type full="Rebelo\At\QRCode\array&lt;int" namespace="Rebelo\At\QRCode" name="array&lt;int"/>
+      </return>
+    </docblock>
+  </method>
+</class>

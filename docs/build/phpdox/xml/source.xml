@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.net/src">
+  <dir name="D:/NetBeansProjects/PHP/AtCud/src">
+    <dir name="Rebelo">
+      <dir name="At">
+        <dir name="QRCode">
+          <file name="Builder.php" size="86475" time="2020-10-19T22:27:41+01:00" unixtime="1603142861" sha1="c2f1e30541cc4b90ca6d28c17fb313e03e4671db" xml="tokens/Rebelo/At/QRCode/Builder.php.xml"/>
+          <file name="QRCodeException.php" size="644" time="2020-10-18T20:47:57+01:00" unixtime="1603050477" sha1="5b5651fcb156c50b7f26e7c7ed4a6ccaaad46544" xml="tokens/Rebelo/At/QRCode/QRCodeException.php.xml"/>
+          <file name="Tokens.php" size="8363" time="2020-10-19T21:32:00+01:00" unixtime="1603139520" sha1="b53215a5bdebe3acd6671ca1c58305ad7a413c95" xml="tokens/Rebelo/At/QRCode/Tokens.php.xml"/>
+        </dir>
+      </dir>
+    </dir>
+  </dir>
+</source>
