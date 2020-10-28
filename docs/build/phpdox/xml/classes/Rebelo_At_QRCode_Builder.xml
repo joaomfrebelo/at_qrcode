@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Rebelo\At\QRCode\Builder" namespace="Rebelo\At\QRCode" name="Builder" abstract="false" final="false" start="18" end="2598">
-  <file path="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode" file="Builder.php" realpath="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode/Builder.php" size="86475" time="2020-10-19T22:27:41+01:00" unixtime="1603142861" sha1="c2f1e30541cc4b90ca6d28c17fb313e03e4671db" relative="Rebelo/At/QRCode/Builder.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Rebelo\At\QRCode\Builder" namespace="Rebelo\At\QRCode" name="Builder" abstract="false" final="false" start="18" end="2597">
+  <file path="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode" file="Builder.php" realpath="D:/NetBeansProjects/PHP/AtCud/src/Rebelo/At/QRCode/Builder.php" size="86498" time="2020-10-28T22:04:01+00:00" unixtime="1603922641" sha1="65e7c2d4a8e972ff30d44813db4879e2e8b0b0a1" relative="Rebelo/At/QRCode/Builder.php"/>
   <docblock>
     <description compact="The Cud class"/>
     <author value="João Rebelo&gt;"/>
@@ -201,7 +201,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setAtcud" start="343" end="356" abstract="false" final="false" static="false" visibility="public">
+  <method name="setAtcud" start="343" end="358" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: H (This field is mandatory)&lt;br&gt; ATCUD&lt;br&gt; Ex: 'CSDF7T5H-35'&lt;br&gt;"/>
       <param description="The ATCUD" type="string" variable="$atcud"/>
@@ -214,7 +214,7 @@
     </docblock>
     <parameter name="atcud" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getAtcud" start="364" end="370" abstract="false" final="false" static="false" visibility="public">
+  <method name="getAtcud" start="366" end="372" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: H (This field is mandatory)&lt;br&gt; ATCUD&lt;br&gt; Ex: 'CSDF7T5H-35'&lt;br&gt;"/>
       <return description="The ATCUD" type="object">
@@ -222,7 +222,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setDocWithoutVat" start="379" end="383" abstract="false" final="false" static="false" visibility="public">
+  <method name="setDocWithoutVat" start="381" end="385" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I1&lt;br&gt; Invoke only this method if the case of a document without an indication of the VAT rate, which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)"/>
       <return type="object">
@@ -230,7 +230,7 @@
       </return>
     </docblock>
   </method>
-  <method name="isDocWithoutVat" start="392" end="403" abstract="false" final="false" static="false" visibility="public">
+  <method name="isDocWithoutVat" start="394" end="405" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I1&lt;br&gt; Verify if is a document without an indication of the VAT rate, which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)"/>
       <return description="null if is not setted" type="object">
@@ -238,7 +238,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTExemptedBaseVat" start="415" end="428" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTExemptedBaseVat" start="417" end="430" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I2&lt;br&gt; VAT-exempt tax base of PT fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
       <param description="Total value of the tax base exempt from VAT" type="float" variable="$value"/>
@@ -251,7 +251,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTExemptedBaseVat" start="438" end="444" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTExemptedBaseVat" start="440" end="446" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I2&lt;br&gt; VAT-exempt tax base of PT fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
       <return description="Total value of the tax base exempt from VAT" type="object">
@@ -259,7 +259,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTReducedBaseVat" start="454" end="467" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTReducedBaseVat" start="456" end="469" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
       <param description="Total value of the tax base" type="float" variable="$value"/>
@@ -272,7 +272,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTReducedBaseVat" start="475" end="481" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTReducedBaseVat" start="477" end="483" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
       <return description="Total value of the tax base" type="object">
@@ -280,7 +280,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTReducedTotalVat" start="490" end="503" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTReducedTotalVat" start="492" end="505" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
       <param description="Total VAT at reduced rate" type="float" variable="$value"/>
@@ -293,7 +293,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTReducedTotalVat" start="510" end="516" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTReducedTotalVat" start="512" end="518" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
       <return description="Total VAT at reduced rate" type="object">
@@ -301,7 +301,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTIntermediateBaseVat" start="526" end="539" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTIntermediateBaseVat" start="528" end="541" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
       <param description="Total value of the tax base" type="float" variable="$value"/>
@@ -314,7 +314,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTIntermediateBaseVat" start="547" end="555" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTIntermediateBaseVat" start="549" end="557" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
       <return description="Total value of the tax base" type="object">
@@ -322,7 +322,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTIntermediateTotalVat" start="564" end="577" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTIntermediateTotalVat" start="566" end="579" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
       <param description="Total VAT at intermediate rate" type="float" variable="$value"/>
@@ -335,7 +335,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTIntermediateTotalVat" start="584" end="592" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTIntermediateTotalVat" start="586" end="594" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
       <return description="Total VAT at reduced rate" type="object">
@@ -343,7 +343,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTNormalBaseVat" start="602" end="615" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTNormalBaseVat" start="604" end="617" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
       <param description="Total value of the tax base" type="float" variable="$value"/>
@@ -356,7 +356,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTNormalBaseVat" start="623" end="629" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTNormalBaseVat" start="625" end="631" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
       <return description="Total value of the tax base" type="object">
@@ -364,7 +364,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTNormalTotalVat" start="638" end="651" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTNormalTotalVat" start="640" end="653" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
       <param description="Total VAT at normal rate" type="float" variable="$value"/>
@@ -377,7 +377,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTNormalTotalVat" start="658" end="664" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTNormalTotalVat" start="660" end="666" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: I8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
       <return description="Total VAT at reduced rate" type="object">
@@ -385,7 +385,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTACExemptedBaseVat" start="676" end="689" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTACExemptedBaseVat" start="678" end="691" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J2&lt;br&gt; VAT-exempt tax base of PTAC fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
       <param description="Total value of the tax base exempt from VAT" type="float" variable="$value"/>
@@ -398,7 +398,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTACExemptedBaseVat" start="699" end="707" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTACExemptedBaseVat" start="701" end="709" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J2&lt;br&gt; VAT-exempt tax base of PTAC fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
       <return description="Total value of the tax base exempt from VAT" type="object">
@@ -406,7 +406,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTACReducedBaseVat" start="717" end="730" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTACReducedBaseVat" start="719" end="732" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
       <param description="Total value of the tax base" type="float" variable="$value"/>
@@ -419,7 +419,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTACReducedBaseVat" start="738" end="744" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTACReducedBaseVat" start="740" end="746" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
       <return description="Total value of the tax base" type="object">
@@ -427,7 +427,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTACReducedTotalVat" start="753" end="766" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTACReducedTotalVat" start="755" end="768" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
       <param description="Total VAT at reduced rate" type="float" variable="$value"/>
@@ -440,7 +440,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTACReducedTotalVat" start="773" end="781" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTACReducedTotalVat" start="775" end="783" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
       <return description="Total VAT at reduced rate" type="object">
@@ -448,7 +448,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTACIntermediateBaseVat" start="791" end="804" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTACIntermediateBaseVat" start="793" end="806" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
       <param description="Total value of the tax base" type="float" variable="$value"/>
@@ -461,7 +461,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTACIntermediateBaseVat" start="812" end="820" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTACIntermediateBaseVat" start="814" end="822" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
       <return description="Total value of the tax base" type="object">
@@ -469,7 +469,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTACIntermediateTotalVat" start="829" end="842" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTACIntermediateTotalVat" start="831" end="844" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
       <param description="Total VAT at intermediate rate" type="float" variable="$value"/>
@@ -482,7 +482,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTACIntermediateTotalVat" start="849" end="857" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTACIntermediateTotalVat" start="851" end="859" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
       <return description="Total VAT at reduced rate" type="object">
@@ -490,7 +490,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTACNormalBaseVat" start="867" end="880" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTACNormalBaseVat" start="869" end="882" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
       <param description="Total value of the tax base" type="float" variable="$value"/>
@@ -503,7 +503,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTACNormalBaseVat" start="888" end="894" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTACNormalBaseVat" start="890" end="896" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
       <return description="Total value of the tax base" type="object">
@@ -511,7 +511,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTACNormalTotalVat" start="903" end="916" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTACNormalTotalVat" start="905" end="918" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
       <param description="Total VAT at normal rate" type="float" variable="$value"/>
@@ -524,7 +524,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTACNormalTotalVat" start="923" end="929" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTACNormalTotalVat" start="925" end="931" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: J8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
       <return description="Total VAT at reduced rate" type="object">
@@ -532,7 +532,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTMAExemptedBaseVat" start="941" end="954" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTMAExemptedBaseVat" start="943" end="956" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K2&lt;br&gt; VAT-exempt tax base of PTMA fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
       <param description="Total value of the tax base exempt from VAT" type="float" variable="$value"/>
@@ -545,7 +545,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTMAExemptedBaseVat" start="964" end="972" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTMAExemptedBaseVat" start="966" end="974" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K2&lt;br&gt; VAT-exempt tax base of PTMA fiscal region&lt;br&gt; Total value of the tax base exempt from VAT (including taxable transactions under Stamp Duty, whether or not they are exempt from Stamp Duty)."/>
       <return description="Total value of the tax base exempt from VAT" type="object">
@@ -553,7 +553,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTMAReducedBaseVat" start="982" end="995" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTMAReducedBaseVat" start="984" end="997" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
       <param description="Total value of the tax base" type="float" variable="$value"/>
@@ -566,7 +566,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTMAReducedBaseVat" start="1003" end="1009" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTMAReducedBaseVat" start="1005" end="1011" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K3&lt;br&gt; VAT tax base at reduced rate&lt;br&gt; Total value of the tax base subject to the reduced VAT rate."/>
       <return description="Total value of the tax base" type="object">
@@ -574,7 +574,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTMAReducedTotalVat" start="1018" end="1031" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTMAReducedTotalVat" start="1020" end="1033" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
       <param description="Total VAT at reduced rate" type="float" variable="$value"/>
@@ -587,7 +587,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTMAReducedTotalVat" start="1038" end="1046" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTMAReducedTotalVat" start="1040" end="1048" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K4&lt;br&gt; Total VAT at reduced rate&lt;br&gt;"/>
       <return description="Total VAT at reduced rate" type="object">
@@ -595,7 +595,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTMAIntermediateBaseVat" start="1056" end="1069" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTMAIntermediateBaseVat" start="1058" end="1071" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
       <param description="Total value of the tax base" type="float" variable="$value"/>
@@ -608,7 +608,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTMAIntermediateBaseVat" start="1077" end="1085" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTMAIntermediateBaseVat" start="1079" end="1087" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K5&lt;br&gt; VAT tax base at intermediate rate&lt;br&gt; Total value of the tax base subject to the intermediate VAT rate."/>
       <return description="Total value of the tax base" type="object">
@@ -616,7 +616,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTMAIntermediateTotalVat" start="1094" end="1107" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTMAIntermediateTotalVat" start="1096" end="1109" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
       <param description="Total VAT at intermediate rate" type="float" variable="$value"/>
@@ -629,7 +629,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTMAIntermediateTotalVat" start="1114" end="1122" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTMAIntermediateTotalVat" start="1116" end="1124" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K6&lt;br&gt; Total VAT at intermediate rate&lt;br&gt;"/>
       <return description="Total VAT at reduced rate" type="object">
@@ -637,7 +637,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTMANormalBaseVat" start="1132" end="1145" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTMANormalBaseVat" start="1134" end="1147" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
       <param description="Total value of the tax base" type="float" variable="$value"/>
@@ -650,7 +650,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTMANormalBaseVat" start="1153" end="1159" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTMANormalBaseVat" start="1155" end="1161" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K7&lt;br&gt; VAT tax base at normal rate&lt;br&gt; Total value of the tax base subject to the normal VAT rate."/>
       <return description="Total value of the tax base" type="object">
@@ -658,7 +658,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setPTMANormalTotalVat" start="1168" end="1181" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPTMANormalTotalVat" start="1170" end="1183" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
       <param description="Total VAT at normal rate" type="float" variable="$value"/>
@@ -671,7 +671,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPTMANormalTotalVat" start="1188" end="1194" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPTMANormalTotalVat" start="1190" end="1196" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: K8&lt;br&gt; Total VAT at normal rate&lt;br&gt;"/>
       <return description="Total VAT at reduced rate" type="object">
@@ -679,7 +679,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setTotalNonVat" start="1204" end="1216" abstract="false" final="false" static="false" visibility="public">
+  <method name="setTotalNonVat" start="1206" end="1218" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: L&lt;br&gt; Not subject / non-taxable in VAT (IVA)&lt;br&gt; Total value related to non-subject / non-taxable transactions in VAT."/>
       <param description="Total value non-subject / non-taxable" type="float" variable="$value"/>
@@ -692,7 +692,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getTotalNonVat" start="1224" end="1230" abstract="false" final="false" static="false" visibility="public">
+  <method name="getTotalNonVat" start="1226" end="1232" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: L&lt;br&gt; Not subject / non-taxable in VAT (IVA)&lt;br&gt; Total value related to non-subject / non-taxable transactions in VAT."/>
       <return description="Total value of non-subject / non-taxable" type="object">
@@ -700,7 +700,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setTotalStampTax" start="1240" end="1252" abstract="false" final="false" static="false" visibility="public">
+  <method name="setTotalStampTax" start="1242" end="1254" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: M&lt;br&gt; Stamp tax&lt;br&gt; Total value of stamp tax."/>
       <param description="Total value of stamp tax" type="float" variable="$value"/>
@@ -713,7 +713,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getTotalStampTax" start="1260" end="1266" abstract="false" final="false" static="false" visibility="public">
+  <method name="getTotalStampTax" start="1262" end="1268" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: M&lt;br&gt; Stamp tax&lt;br&gt; Total value of stamp tax."/>
       <return description="Total value of stamp tax" type="object">
@@ -721,7 +721,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setTaxPayable" start="1276" end="1288" abstract="false" final="false" static="false" visibility="public">
+  <method name="setTaxPayable" start="1278" end="1290" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: N&lt;br&gt; TaxPayable&lt;br&gt; Total value of VAT and Stamp Tax - TaxPayable field of SAF-T (PT)"/>
       <param description="Total value of tax payable" type="float" variable="$value"/>
@@ -734,7 +734,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getTaxPayable" start="1296" end="1302" abstract="false" final="false" static="false" visibility="public">
+  <method name="getTaxPayable" start="1298" end="1304" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: N&lt;br&gt; TaxPayable&lt;br&gt; Total value of VAT and Stamp Tax - TaxPayable field of SAF-T (PT)"/>
       <return description="Total tax payable" type="object">
@@ -742,7 +742,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setGrossTotal" start="1312" end="1324" abstract="false" final="false" static="false" visibility="public">
+  <method name="setGrossTotal" start="1314" end="1326" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: O&lt;br&gt; Gross total&lt;br&gt; Total document value - GrossTotal field of SAF-T (PT)."/>
       <param description="Total gross" type="float" variable="$value"/>
@@ -755,7 +755,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getGrossTotal" start="1332" end="1338" abstract="false" final="false" static="false" visibility="public">
+  <method name="getGrossTotal" start="1334" end="1340" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: O&lt;br&gt; Gross total&lt;br&gt; Total document value - GrossTotal field of SAF-T (PT)."/>
       <return description="Total gross" type="object">
@@ -763,7 +763,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setWithholdingTaxAmount" start="1347" end="1359" abstract="false" final="false" static="false" visibility="public">
+  <method name="setWithholdingTaxAmount" start="1349" end="1361" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: P&lt;br&gt; Withholding Tax Amount&lt;br&gt;"/>
       <param description="Withholding Tax Amount" type="float" variable="$value"/>
@@ -776,7 +776,7 @@
     </docblock>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getWithholdingTaxAmount" start="1366" end="1374" abstract="false" final="false" static="false" visibility="public">
+  <method name="getWithholdingTaxAmount" start="1368" end="1376" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: P&lt;br&gt; Withholding Tax Amount"/>
       <return description="Withholding Tax Amount" type="object">
@@ -784,7 +784,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setHash" start="1383" end="1395" abstract="false" final="false" static="false" visibility="public">
+  <method name="setHash" start="1385" end="1397" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: Q&lt;br&gt; 4 Hash characters&lt;br&gt;"/>
       <param description="The 4 Hash characters" type="string" variable="$hash"/>
@@ -797,7 +797,7 @@
     </docblock>
     <parameter name="hash" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getHash" start="1402" end="1408" abstract="false" final="false" static="false" visibility="public">
+  <method name="getHash" start="1404" end="1410" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: Q&lt;br&gt; 4 Hash characters"/>
       <return description="The 4 Hash characters" type="object">
@@ -805,7 +805,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setCertificateNo" start="1417" end="1429" abstract="false" final="false" static="false" visibility="public">
+  <method name="setCertificateNo" start="1419" end="1431" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: R&lt;br&gt; Program certificate number&lt;br&gt;"/>
       <param description="The Certificate number" type="int" variable="$number"/>
@@ -818,7 +818,7 @@
     </docblock>
     <parameter name="number" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getCertificateNo" start="1436" end="1442" abstract="false" final="false" static="false" visibility="public">
+  <method name="getCertificateNo" start="1438" end="1444" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: R&lt;br&gt; Program certificate number"/>
       <return description="Program certificate number" type="object">
@@ -826,7 +826,7 @@
       </return>
     </docblock>
   </method>
-  <method name="setOtherInfo" start="1455" end="1471" abstract="false" final="false" static="false" visibility="public">
+  <method name="setOtherInfo" start="1457" end="1473" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: S&lt;br&gt; Other info&lt;br&gt; Field of free filling, in which, for example, information for payment can be indicated (ex: from IBAN or Ref MB, with the tab «;»).">This field cannot contain the asterisk character (*).</description>
       <param description="Other info" type="string" variable="$info"/>
@@ -839,7 +839,7 @@
     </docblock>
     <parameter name="info" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getOtherInfo" start="1482" end="1488" abstract="false" final="false" static="false" visibility="public">
+  <method name="getOtherInfo" start="1484" end="1490" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Field: S&lt;br&gt; Other info&lt;br&gt; Field of free filling, in which, for example, information for payment can be indicated (ex: from IBAN or Ref MB, with the tab «;»).">This field cannot contain the asterisk character (*).</description>
       <return description="Info" type="object">
@@ -847,7 +847,7 @@
       </return>
     </docblock>
   </method>
-  <method name="getQrCodeString" start="1496" end="1517" abstract="false" final="false" static="false" visibility="public">
+  <method name="getQrCodeString" start="1498" end="1519" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Get QrCode string"/>
       <param description="Check fields" type="object" variable="$check">
@@ -860,7 +860,7 @@
     </docblock>
     <parameter name="check" byreference="false" type="boolean" default="true"/>
   </method>
-  <method name="iterateCode" start="1526" end="1934" abstract="false" final="false" static="false" visibility="protected">
+  <method name="iterateCode" start="1528" end="1936" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="iterarte over the string tokens to check if are correct."/>
       <param description="The QrCode string" type="string" variable="$qrCodeStr"/>
@@ -877,25 +877,25 @@
     <parameter name="qrCodeStr" byreference="false" type="{unknown}"/>
     <parameter name="setValue" byreference="false" type="{unknown}"/>
     <inline>
-      <comment value="Field A, Index 0" line="1535"/>
-      <comment value="Field B, Index 1" line="1561"/>
-      <comment value="Field C, Index 2" line="1583"/>
-      <comment value="@phpstan-ignore-next-line" line="1584"/>
-      <comment value="Field D, Index 3" line="1606"/>
-      <comment value="@phpstan-ignore-next-line" line="1607"/>
-      <comment value="Field E, Index 4" line="1629"/>
-      <comment value="@phpstan-ignore-next-line" line="1630"/>
-      <comment value="Field F, Index 5" line="1652"/>
-      <comment value="@phpstan-ignore-next-line" line="1653"/>
-      <comment value="Field G, Index 6" line="1675"/>
-      <comment value="@phpstan-ignore-next-line" line="1676"/>
-      <comment value="Field H, Index 7" line="1698"/>
-      <comment value="@phpstan-ignore-next-line" line="1699"/>
-      <comment value="Field I, Index 8" line="1721"/>
-      <comment value="@phpstan-ignore-next-line" line="1722"/>
+      <comment value="Field A, Index 0" line="1537"/>
+      <comment value="Field B, Index 1" line="1563"/>
+      <comment value="Field C, Index 2" line="1585"/>
+      <comment value="@phpstan-ignore-next-line" line="1586"/>
+      <comment value="Field D, Index 3" line="1608"/>
+      <comment value="@phpstan-ignore-next-line" line="1609"/>
+      <comment value="Field E, Index 4" line="1631"/>
+      <comment value="@phpstan-ignore-next-line" line="1632"/>
+      <comment value="Field F, Index 5" line="1654"/>
+      <comment value="@phpstan-ignore-next-line" line="1655"/>
+      <comment value="Field G, Index 6" line="1677"/>
+      <comment value="@phpstan-ignore-next-line" line="1678"/>
+      <comment value="Field H, Index 7" line="1700"/>
+      <comment value="@phpstan-ignore-next-line" line="1701"/>
+      <comment value="Field I, Index 8" line="1723"/>
+      <comment value="@phpstan-ignore-next-line" line="1724"/>
     </inline>
   </method>
-  <method name="setIterateRegionPT" start="1950" end="2138" abstract="false" final="false" static="false" visibility="protected">
+  <method name="setIterateRegionPT" start="1952" end="2140" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Iterate over the Country Region fiscal zone PT -&gt; fields I2-I8"/>
       <param description="string&gt; $spl the array to iterat over the field I2-I8" type="object">
@@ -926,7 +926,7 @@
     <parameter name="field" byreference="true" type="{unknown}"/>
     <parameter name="value" byreference="true" type="{unknown}"/>
   </method>
-  <method name="setIterateRegionPTAC" start="2154" end="2342" abstract="false" final="false" static="false" visibility="protected">
+  <method name="setIterateRegionPTAC" start="2156" end="2344" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Iterate over the Country Region fiscal zone PT-AC -&gt; fields J2-J8"/>
       <param description="string&gt; $spl the array to iterat over the field J2-J8" type="object">
@@ -957,7 +957,7 @@
     <parameter name="field" byreference="true" type="{unknown}"/>
     <parameter name="value" byreference="true" type="{unknown}"/>
   </method>
-  <method name="setIterateRegionPTMA" start="2358" end="2545" abstract="false" final="false" static="false" visibility="protected">
+  <method name="setIterateRegionPTMA" start="2360" end="2547" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Iterate over the Country Region fiscal zone PT-MA -&gt; fields K2-K8"/>
       <param description="string&gt; $spl the array to iterat over the field J2-J8" type="object">
@@ -988,7 +988,7 @@
     <parameter name="field" byreference="true" type="{unknown}"/>
     <parameter name="value" byreference="true" type="{unknown}"/>
   </method>
-  <method name="splitFieldValue" start="2555" end="2568" abstract="false" final="false" static="false" visibility="protected">
+  <method name="splitFieldValue" start="2557" end="2570" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Split teh field name and value"/>
       <param type="string" variable="$string"/>
@@ -1005,10 +1005,10 @@
     <parameter name="field" byreference="true" type="{unknown}"/>
     <parameter name="value" byreference="true" type="{unknown}"/>
     <inline>
-      <comment value="@phpstan-ignore-next-line" line="2564"/>
+      <comment value="@phpstan-ignore-next-line" line="2566"/>
     </inline>
   </method>
-  <method name="parseString" start="2575" end="2581" abstract="false" final="false" static="true" visibility="public">
+  <method name="parseString" start="2577" end="2583" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Parse a QRCode string"/>
       <param type="string" variable="$string"/>
@@ -1018,7 +1018,7 @@
     </docblock>
     <parameter name="string" byreference="false" type="{unknown}"/>
   </method>
-  <method name="buildImage" start="2588" end="2597" abstract="false" final="false" static="false" visibility="public">
+  <method name="buildImage" start="2590" end="2596" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Build the QRcode image as png"/>
       <param type="string" variable="$path"/>

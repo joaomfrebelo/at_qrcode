@@ -4,7 +4,7 @@
     <dir name="Rebelo">
       <dir name="At">
         <dir name="QRCode">
-          <file name="Builder.php" size="86475" time="2020-10-19T22:27:41+01:00" unixtime="1603142861" sha1="c2f1e30541cc4b90ca6d28c17fb313e03e4671db" xml="tokens/Rebelo/At/QRCode/Builder.php.xml"/>
+          <file name="Builder.php" size="86498" time="2020-10-28T22:04:01+00:00" unixtime="1603922641" sha1="65e7c2d4a8e972ff30d44813db4879e2e8b0b0a1" xml="tokens/Rebelo/At/QRCode/Builder.php.xml"/>
           <file name="QRCodeException.php" size="644" time="2020-10-18T20:47:57+01:00" unixtime="1603050477" sha1="5b5651fcb156c50b7f26e7c7ed4a6ccaaad46544" xml="tokens/Rebelo/At/QRCode/QRCodeException.php.xml"/>
           <file name="Tokens.php" size="8363" time="2020-10-19T21:32:00+01:00" unixtime="1603139520" sha1="b53215a5bdebe3acd6671ca1c58305ad7a413c95" xml="tokens/Rebelo/At/QRCode/Tokens.php.xml"/>
         </dir>
