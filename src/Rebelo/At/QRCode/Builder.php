@@ -34,7 +34,7 @@ class Builder
      * @var int
      */
     public static $level = QR_ECLEVEL_M;
-    
+
     /**
      * 
      * @var array<int, string>
@@ -346,11 +346,13 @@ class Builder
             throw new QRCodeException("atcud_can_not_be_null");
         }
 
-        if (\is_string($atcud) === false || \strlen($atcud) > 70 ||
-            \preg_match("/^[A-Z0-9]{1,}-[0-9]{1,}$/", $atcud) !== 1) {
-            throw new QRCodeException("atcud_wrong_format");
+        if ($atcud !== "0") {
+            if (\is_string($atcud) === false || \strlen($atcud) > 70 ||
+                \preg_match("/^[A-Z0-9]{1,}-[0-9]{1,}$/", $atcud) !== 1) {
+                throw new QRCodeException("atcud_wrong_format");
+            }
         }
-
+        
         $this->properties[Tokens::T_ATCUD] = (string) $atcud;
         return $this;
     }
@@ -2588,10 +2590,7 @@ class Builder
     public function buildImage($path)
     {
         \QRcode::png(
-            $this->getQrCodeString(false), 
-            $path,
-            self::$level,
-            self::$size,
+            $this->getQrCodeString(false), $path, self::$level, self::$size,
             self::$margin
         );
     }

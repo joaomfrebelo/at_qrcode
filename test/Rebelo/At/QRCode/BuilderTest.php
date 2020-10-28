@@ -54,6 +54,13 @@ class BuilderTest extends TestCase
      */
     const EXAMPLE_WRONG = "A:500000000*C:PT*D:GT*E:N*F:20190720*G:GT G234CB/50987*H:GTVX4Y8B-50987*I1:0*N:0.00*O:0.00*Q:5uIg*R:9999*S:AAA*T:CCC";
 
+    
+    /**
+     * QRCode string with ATCUD zero  
+     */
+    const EXAMPLE_ATCUD_ZERO = "A:500000000*B:123456789*C:PT*D:GT*E:N*F:20190720*G:GT G234CB/50987*H:0*I1:0*N:0.00*O:0.00*Q:5uIg*R:9999";
+
+    
     // phpcs:enable
 
     /**
@@ -2447,7 +2454,7 @@ class BuilderTest extends TestCase
     public function testWrongString()
     {
         try {
-            $builder = Builder::parseString(self::EXAMPLE_WRONG_END_1);
+            Builder::parseString(self::EXAMPLE_WRONG_END_1);
             $this->fail(
                 "Wrong end should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
@@ -2459,7 +2466,7 @@ class BuilderTest extends TestCase
         }
 
         try {
-            $builder = Builder::parseString(self::EXAMPLE_WRONG_END_2);
+            Builder::parseString(self::EXAMPLE_WRONG_END_2);
             $this->fail(
                 "Wrong end should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
@@ -2471,7 +2478,7 @@ class BuilderTest extends TestCase
         }
 
         try {
-            $builder = Builder::parseString(self::EXAMPLE_WRONG);
+            Builder::parseString(self::EXAMPLE_WRONG);
             $this->fail(
                 "Wrong end should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
@@ -2481,5 +2488,17 @@ class BuilderTest extends TestCase
                 '\Rebelo\At\QRCode\QRCodeException', $ex
             );
         }
+    }
+
+    /**
+     * @author João Rebelo
+     * @return void
+     * @test
+     */
+    public function testParseStringAtExmapleAtcudZero()
+    {
+        $builder = Builder::parseString(self::EXAMPLE_ATCUD_ZERO);
+        $this->assertInstanceOf(self::MAIN_CLASS, $builder);
+        $this->assertSame(self::EXAMPLE_ATCUD_ZERO, $builder->getQrCodeString(true));
     }
 }
