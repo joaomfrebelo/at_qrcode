@@ -8,6 +8,7 @@ parameters:
 	bootstrapFiles:
 		- test/bootstrap.php
 	ignoreErrors:
+		- '#Parameter \#1 \$string of method Rebelo\\At\\QRCode\\Builder::splitFieldValue\(\) expects string, string\|false given#'
 		- '#Strict comparison using === between float and null will always evaluate to false#'
 		- '#Strict comparison using === between true and false will always evaluate to false#'
 		- '#Strict comparison using === between string and null will always evaluate to false#'

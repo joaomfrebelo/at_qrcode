@@ -59,7 +59,16 @@ class BuilderTest extends TestCase
      * QRCode string with ATCUD zero  
      */
     const EXAMPLE_ATCUD_ZERO = "A:500000000*B:123456789*C:PT*D:GT*E:N*F:20190720*G:GT G234CB/50987*H:0*I1:0*N:0.00*O:0.00*Q:5uIg*R:9999";
-
+    
+    /**
+     * QRCode string of a payment (RG), no hash but field q (empty), not tax
+     */
+    const PAYMENT_EXAMPLE_WITHOUT_TAX = "A:500000000*B:123456789*C:PT*D:RG*E:N*F:20190720*G:RG RG/1*H:GTVX4Y8B-50987*I1:0*N:99.00*O:99.00*Q:*R:9999";
+    
+    /**
+     * QRCode string of a payment (RC), no hash but field q (empty), with tax 
+     */
+    const PAYMENT_EXAMPLE_WITH_TAX = "A:500000000*B:123456789*C:PT*D:RC*E:N*F:20190123*G:RC RC/145789*H:HB6FT7RV-145789*I1:PT*I2:12345.34*I3:12532.65*I4:751.96*I5:52789.00*I6:6862.57*I7:32425.69*I8:7457.91*N:15072.44*O:125165.12*Q:*R:9999";
     
     // phpcs:enable
 
@@ -2500,5 +2509,29 @@ class BuilderTest extends TestCase
         $builder = Builder::parseString(self::EXAMPLE_ATCUD_ZERO);
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
         $this->assertSame(self::EXAMPLE_ATCUD_ZERO, $builder->getQrCodeString(true));
+    }
+    
+    /**
+     * @author João Rebelo
+     * @return void
+     * @test
+     */
+    public function testParseStringPaymentExampleWithoutTax()
+    {
+        $builder = Builder::parseString(self::PAYMENT_EXAMPLE_WITHOUT_TAX);
+        $this->assertInstanceOf(self::MAIN_CLASS, $builder);
+        $this->assertSame(self::PAYMENT_EXAMPLE_WITHOUT_TAX, $builder->getQrCodeString(true));
+    }
+    
+    /**
+     * @author João Rebelo
+     * @return void
+     * @test
+     */
+    public function testParseStringPaymentExampleWithTax()
+    {
+        $builder = Builder::parseString(self::PAYMENT_EXAMPLE_WITH_TAX);
+        $this->assertInstanceOf(self::MAIN_CLASS, $builder);
+        $this->assertSame(self::PAYMENT_EXAMPLE_WITH_TAX, $builder->getQrCodeString(true));
     }
 }

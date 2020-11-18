@@ -1535,6 +1535,7 @@ class Builder
         $spl       = \explode("*", $qrCodeStr);
 
         // Field A, Index 0
+        /* @phpstan-ignore-next-line */
         if (\reset($spl) === false) {
             $msg = "Wrong format or empty QRCode string";
             \Logger::getLogger(\get_class($this))->error(
@@ -2564,7 +2565,12 @@ class Builder
         $value = \substr($string, $pos + 1);
 
         /** @phpstan-ignore-next-line */
-        if ($value === false || $field === false) {
+        if ($value === false || $field === false) {            
+            // Payments has no  hash but field is mandatory
+            /** @phpstan-ignore-next-line */
+            if($field === "Q" && $value === false && \in_array($this->getDocType(), array("RG", "RC"))){
+                return;
+            }
             throw new QRCodeException("Split field value error");
         }
     }
