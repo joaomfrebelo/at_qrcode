@@ -2569,6 +2569,7 @@ class Builder
             // Payments has no  hash but field is mandatory
             /** @phpstan-ignore-next-line */
             if($field === "Q" && $value === false && \in_array($this->getDocType(), array("RG", "RC"))){
+                $value = "";
                 return;
             }
             throw new QRCodeException("Split field value error");
