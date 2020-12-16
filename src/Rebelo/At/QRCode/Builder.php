@@ -420,7 +420,7 @@ class Builder
             throw new QRCodeException("ptexcemptedbasevat_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptexcemptedbasevat_wrong_format");
         }
 
@@ -459,7 +459,7 @@ class Builder
             throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -495,7 +495,7 @@ class Builder
             throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -531,7 +531,7 @@ class Builder
             throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -569,7 +569,7 @@ class Builder
             throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -607,7 +607,7 @@ class Builder
             throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -643,7 +643,7 @@ class Builder
             throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -681,7 +681,7 @@ class Builder
             throw new QRCodeException("ptexcemptedbasevat_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptexcemptedbasevat_wrong_format");
         }
 
@@ -722,7 +722,7 @@ class Builder
             throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -758,7 +758,7 @@ class Builder
             throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -796,7 +796,7 @@ class Builder
             throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -834,7 +834,7 @@ class Builder
             throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -872,7 +872,7 @@ class Builder
             throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -908,7 +908,7 @@ class Builder
             throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -946,7 +946,7 @@ class Builder
             throw new QRCodeException("ptexcemptedbasevat_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptexcemptedbasevat_wrong_format");
         }
 
@@ -987,7 +987,7 @@ class Builder
             throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -1023,7 +1023,7 @@ class Builder
             throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -1061,7 +1061,7 @@ class Builder
             throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -1099,7 +1099,7 @@ class Builder
             throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -1137,7 +1137,7 @@ class Builder
             throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -1173,7 +1173,7 @@ class Builder
             throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0) {
+        if (\is_float($value) === false || $value < 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -1209,7 +1209,7 @@ class Builder
             throw new QRCodeException("noniva_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0.0) {
+        if (\is_float($value) === false || $value < 0.0) {
             throw new QRCodeException("noniva_wrong_format");
         }
 
@@ -1245,7 +1245,7 @@ class Builder
             throw new QRCodeException("stamptax_can_not_be_null");
         }
 
-        if (\is_float($value) === false || $value <= 0.0) {
+        if (\is_float($value) === false || $value < 0.0) {
             throw new QRCodeException("stamptax_wrong_format");
         }
 
