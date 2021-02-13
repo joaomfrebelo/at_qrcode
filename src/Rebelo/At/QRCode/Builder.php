@@ -510,6 +510,7 @@ class Builder
      */
     public function setPTIntermediateTotalVat(float $value) : Builder
     {
+
         if ($value <= 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
@@ -544,6 +545,7 @@ class Builder
      */
     public function setPTNormalBaseVat(float $value) : Builder
     {
+
         if ($value <= 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
@@ -576,6 +578,7 @@ class Builder
      */
     public function setPTNormalTotalVat(float $value) : Builder
     {
+
         if ($value <= 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
@@ -610,6 +613,7 @@ class Builder
      */
     public function setPTACExemptedBaseVat(float $value) : Builder
     {
+
         if ($value <= 0) {
             throw new QRCodeException("ptexcemptedbasevat_wrong_format");
         }
@@ -2416,6 +2420,7 @@ class Builder
             // Payments has no  hash but field is mandatory
             /** @phpstan-ignore-next-line */
             if($field === "Q" && $value === false && \in_array($this->getDocType(), array("RG", "RC"))){
+                $value = "";
                 return;
             }
             throw new QRCodeException("Split field value error");

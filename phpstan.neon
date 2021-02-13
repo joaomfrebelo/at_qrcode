@@ -9,9 +9,6 @@ parameters:
 		- test/bootstrap.php
 	ignoreErrors:
 		- '#Parameter \#1 \$string of method Rebelo\\At\\QRCode\\Builder::splitFieldValue\(\) expects string, string\|false given#'
-		- 
-		   message: '#Parameter ([\D\d]+) Rebelo\\At\\QRCode\\Builder::set([\D\d]+) given#'
-		   path: test/Rebelo/At/QRCode/*
 	excludes_analyse:
 		- test/bootstrap.php
 		- test/Base.php
