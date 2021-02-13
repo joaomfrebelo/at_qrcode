@@ -302,9 +302,9 @@ class Tokens
 
     /**
      * Get the tokens
-     * @return array<int, string>
+     * @return string[]
      */
-    public static function getTokens()
+    public static function getTokens() : array
     {
         $stack                                    = array();
         $stack[self::T_ISSUER_TIN]                  = "A";

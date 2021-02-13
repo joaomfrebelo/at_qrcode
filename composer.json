@@ -2,7 +2,14 @@
     "name": "joaomfrebelo/at_qrcode",
     "homepage": "https://github.com/joaomfrebelo/at_qrcode",
     "keywords": [
-        "php"
+        "php",
+        "AT",
+        "ATCUD",
+        "QRCODE",
+        "TAX",
+        "IVA",
+        "VAT",
+        "Finanças"
     ],
     "authors": [
         {
@@ -29,13 +36,13 @@
     "prefer-stable": true,
     "type": "library",
     "require": {
-        "php": "^5.3|^7.4",
+        "php": "^8.0",
         "apache/log4php": "^2.3"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5",
         "phpstan/phpstan": "^0.12",
-        "phpunit/phpunit": "^4.0"
+        "phpunit/phpunit": "^9.5"
     },
-    "version": "1.0.2"
+    "version": "2.0.0"
 }

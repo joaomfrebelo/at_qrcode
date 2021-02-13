@@ -21,25 +21,25 @@ class Builder
      * Code size
      * @var int
      */
-    public static $size = 2;
+    public static int $size = 2;
 
     /**
      * Code margin
      * @var int
      */
-    public static $margin = 2;
+    public static int $margin = 2;
 
     /**
      * QRcode ECC level
      * @var int
      */
-    public static $level = QR_ECLEVEL_M;
+    public static int $level = QR_ECLEVEL_M;
 
     /**
      * 
-     * @var array<int, string>
+     * @var string[]
      */
-    protected $properties = array();
+    protected array $properties = array();
 
     /**
      * 
@@ -55,9 +55,9 @@ class Builder
 
     /**
      * Get all setted properties, all properties are returned as string
-     * @return array<int, string> All setted properties as string
+     * @return string[] All setted properties as string
      */
-    public function getProperties()
+    public function getProperties() : array
     {
         return $this->properties;
     }
@@ -67,7 +67,7 @@ class Builder
      * @param float $float
      * @return string
      */
-    public static function formatFloat($float)
+    public static function formatFloat(float $float) : string
     {
         return \number_format($float, 2, ".", "");
     }
@@ -80,16 +80,8 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setIssuerTin($tin)
+    public function setIssuerTin(string $tin) : Builder
     {
-        if ($tin === null) {
-            throw new QRCodeException("issuer_tin_can_not_be_null");
-        }
-
-        if (\is_string($tin) === false) {
-            throw new QRCodeException("issuer_tin_wrong_format");
-        }
-
         if (\preg_match("/^[0-9]{9}$/", $tin) !== 1) {
             throw new QRCodeException("issuer_tin_wrong_format");
         }
@@ -104,7 +96,7 @@ class Builder
      * The issuer's TIN (NIF) without Country prefix<br>
      * @return string|null The company TIN (NIF)
      */
-    public function getIssuerTin()
+    public function getIssuerTin() : ?string
     {
         if (\array_key_exists(Tokens::T_ISSUER_TIN, $this->properties)) {
             return $this->properties[Tokens::T_ISSUER_TIN];
@@ -121,13 +113,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setBuyerTin($tin)
+    public function setBuyerTin(string $tin) : Builder
     {
-        if ($tin === null) {
-            throw new QRCodeException("buyer_tin_can_not_be_null");
-        }
-
-        if (\is_string($tin) === false || \strlen($tin) > 30 || $tin === "") {
+        if (\strlen($tin) > 30 || $tin === "") {
             throw new QRCodeException("buyer_tin_wrong_format");
         }
 
@@ -141,7 +129,7 @@ class Builder
      * The buyer's TIN (NIF)
      * @return string|null The buyer's TIN (NIF)
      */
-    public function getBuyerTin()
+    public function getBuyerTin(): ?string
     {
         if (\array_key_exists(Tokens::T_BUYER_TIN, $this->properties)) {
             return $this->properties[Tokens::T_BUYER_TIN];
@@ -157,14 +145,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setCountryCode($countryCode)
+    public function setCountryCode(string $countryCode) : Builder
     {
-        if ($countryCode === null) {
-            throw new QRCodeException("country_code_can_not_be_null");
-        }
-
-        if (\is_string($countryCode) === false || \strlen($countryCode) > 12 ||
-            $countryCode === "") {
+        if (\strlen($countryCode) > 12 || $countryCode === "") {
             throw new QRCodeException("country_code_wrong_format");
         }
 
@@ -177,7 +160,7 @@ class Builder
      * Buyer's Country<br>
      * @return string|null The buyer's country code
      */
-    public function getCountryCode()
+    public function getCountryCode() : ?string
     {
         if (\array_key_exists(Tokens::T_BUYER_COUNTRY, $this->properties)) {
             return $this->properties[Tokens::T_BUYER_COUNTRY];
@@ -193,13 +176,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setDocType($type)
+    public function setDocType(string $type) : Builder
     {
-        if ($type === null) {
-            throw new QRCodeException("doc_type_can_not_be_null");
-        }
-
-        if (\is_string($type) === false || \strlen($type) !== 2) {
+        if (\strlen($type) !== 2) {
             throw new QRCodeException("doc_type_wrong_format");
         }
 
@@ -213,7 +192,7 @@ class Builder
      * According to the type of SAF-T (PT).<br>
      * @return string|null The document type
      */
-    public function getDocType()
+    public function getDocType() : ?string
     {
         if (\array_key_exists(Tokens::T_DOC_TYPE, $this->properties)) {
             return $this->properties[Tokens::T_DOC_TYPE];
@@ -229,13 +208,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setDocStatus($status)
+    public function setDocStatus(string $status) : Builder
     {
-        if ($status === null) {
-            throw new QRCodeException("doc_status_can_not_be_null");
-        }
-
-        if (\is_string($status) === false || \strlen($status) !== 1) {
+        if (\strlen($status) !== 1) {
             throw new QRCodeException("doc_status_wrong_format");
         }
 
@@ -249,7 +224,7 @@ class Builder
      * According to the type of SAF-T (PT).<br>
      * @return string|null The document status
      */
-    public function getDocStatus()
+    public function getDocStatus() : ?string
     {
         if (\array_key_exists(Tokens::T_DOC_STATUS, $this->properties)) {
             return $this->properties[Tokens::T_DOC_STATUS];
@@ -265,14 +240,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setDocDate($date)
+    public function setDocDate(string $date) : Builder
     {
-        if ($date === null) {
-            throw new QRCodeException("doc_date_can_not_be_null");
-        }
-
-        if (\is_string($date) === false ||
-            \preg_match("/^20([0-9]){6}$/", $date) !== 1) {
+        if (\preg_match("/^20([0-9]){6}$/", $date) !== 1) {
             throw new QRCodeException("doc_date_wrong_format");
         }
 
@@ -286,7 +256,7 @@ class Builder
      * Format 'YYYYMMDD'<br>
      * @return string|null The document status
      */
-    public function getDocDate()
+    public function getDocDate() : ?string
     {
         if (\array_key_exists(Tokens::T_DOC_DATE, $this->properties)) {
             return $this->properties[Tokens::T_DOC_DATE];
@@ -303,13 +273,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setDocNo($docNo)
+    public function setDocNo(string $docNo) : Builder
     {
-        if ($docNo === null) {
-            throw new QRCodeException("doc_no_can_not_be_null");
-        }
-
-        if (\is_string($docNo) === false || \strlen($docNo) > 60 || $docNo === "") {
+        if (\strlen($docNo) > 60 || $docNo === "") {
             throw new QRCodeException("doc_no_wrong_format");
         }
 
@@ -324,7 +290,7 @@ class Builder
      * Ex: 'FT A/999'<br>
      * @return string|null The document status
      */
-    public function getDocNo()
+    public function getDocNo() : ?string
     {
         if (\array_key_exists(Tokens::T_DOC_NO, $this->properties)) {
             return $this->properties[Tokens::T_DOC_NO];
@@ -340,15 +306,10 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setAtcud($atcud)
+    public function setAtcud(string $atcud) : Builder
     {
-        if ($atcud === null) {
-            throw new QRCodeException("atcud_can_not_be_null");
-        }
-
         if ($atcud !== "0") {
-            if (\is_string($atcud) === false || \strlen($atcud) > 70 ||
-                \preg_match("/^[A-Z0-9]{1,}-[0-9]{1,}$/", $atcud) !== 1) {
+            if (\strlen($atcud) > 70 || \preg_match("/^[A-Z0-9]{1,}-[0-9]{1,}$/", $atcud) !== 1) {
                 throw new QRCodeException("atcud_wrong_format");
             }
         }
@@ -363,7 +324,7 @@ class Builder
      * Ex: 'CSDF7T5H-35'<br>
      * @return string|null The ATCUD
      */
-    public function getAtcud()
+    public function getAtcud() : ?string
     {
         if (\array_key_exists(Tokens::T_ATCUD, $this->properties)) {
             return $this->properties[Tokens::T_ATCUD];
@@ -378,7 +339,7 @@ class Builder
      * which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)
      * @return \Rebelo\At\QRCode\Builder
      */
-    public function setDocWithoutVat()
+    public function setDocWithoutVat() : Builder
     {
         $this->properties[Tokens::T_FISCAL_REGION_PT] = "0";
         return $this;
@@ -391,7 +352,7 @@ class Builder
      * which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)
      * @return bool|null null if is not setted
      */
-    public function isDocWithoutVat()
+    public function isDocWithoutVat() :?bool
     {
         if (\array_key_exists(Tokens::T_FISCAL_REGION_PT, $this->properties)) {
             return $this->properties[Tokens::T_FISCAL_REGION_PT] === "0";
@@ -414,13 +375,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTExemptedBaseVat($value)
+    public function setPTExemptedBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptexcemptedbasevat_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptexcemptedbasevat_wrong_format");
         }
 
@@ -437,7 +394,7 @@ class Builder
      * whether or not they are exempt from Stamp Duty).
      * @return float|null Total value of the tax base exempt from VAT
      */
-    public function getPTExemptedBaseVat()
+    public function getPTExemptedBaseVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PT_EXEMPTED_BASE_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PT_EXEMPTED_BASE_IVA];
@@ -453,13 +410,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTReducedBaseVat($value)
+    public function setPTReducedBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -474,7 +427,7 @@ class Builder
      * Total value of the tax base subject to the reduced VAT rate.
      * @return float|null Total value of the tax base
      */
-    public function getPTReducedBaseVat()
+    public function getPTReducedBaseVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PT_REDUCED_BASE_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PT_REDUCED_BASE_IVA];
@@ -489,13 +442,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTReducedTotalVat($value)
+    public function setPTReducedTotalVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -509,7 +458,7 @@ class Builder
      * Total VAT at reduced rate<br>
      * @return float|null Total VAT at reduced rate
      */
-    public function getPTReducedTotalVat()
+    public function getPTReducedTotalVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PT_REDUCED_TOTAL_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PT_REDUCED_TOTAL_IVA];
@@ -525,13 +474,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTIntermediateBaseVat($value)
+    public function setPTIntermediateBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -546,7 +491,7 @@ class Builder
      * Total value of the tax base subject to the intermediate VAT rate.
      * @return float|null Total value of the tax base
      */
-    public function getPTIntermediateBaseVat()
+    public function getPTIntermediateBaseVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PT_INTERMEDIATE_BASE_IVA, $this->properties
@@ -563,13 +508,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTIntermediateTotalVat($value)
+    public function setPTIntermediateTotalVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -583,7 +524,7 @@ class Builder
      * Total VAT at intermediate rate<br>
      * @return float|null Total VAT at reduced rate
      */
-    public function getPTIntermediateTotalVat()
+    public function getPTIntermediateTotalVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PT_INTERMEDIATE_TOTAL_IVA, $this->properties
@@ -601,13 +542,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTNormalBaseVat($value)
+    public function setPTNormalBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -622,7 +559,7 @@ class Builder
      * Total value of the tax base subject to the normal VAT rate.
      * @return float|null Total value of the tax base
      */
-    public function getPTNormalBaseVat()
+    public function getPTNormalBaseVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PT_NORMAL_BASE_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PT_NORMAL_BASE_IVA];
@@ -637,13 +574,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTNormalTotalVat($value)
+    public function setPTNormalTotalVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -657,7 +590,7 @@ class Builder
      * Total VAT at normal rate<br>
      * @return float|null Total VAT at reduced rate
      */
-    public function getPTNormalTotalVat()
+    public function getPTNormalTotalVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PT_NORMAL_TOTAL_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PT_NORMAL_TOTAL_IVA];
@@ -675,13 +608,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTACExemptedBaseVat($value)
+    public function setPTACExemptedBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptexcemptedbasevat_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptexcemptedbasevat_wrong_format");
         }
 
@@ -698,7 +627,7 @@ class Builder
      * whether or not they are exempt from Stamp Duty).
      * @return float|null Total value of the tax base exempt from VAT
      */
-    public function getPTACExemptedBaseVat()
+    public function getPTACExemptedBaseVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PTAC_EXEMPTED_BASE_IVA, $this->properties
@@ -716,13 +645,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTACReducedBaseVat($value)
+    public function setPTACReducedBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -737,7 +662,7 @@ class Builder
      * Total value of the tax base subject to the reduced VAT rate.
      * @return float|null Total value of the tax base
      */
-    public function getPTACReducedBaseVat()
+    public function getPTACReducedBaseVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PTAC_REDUCED_BASE_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PTAC_REDUCED_BASE_IVA];
@@ -752,13 +677,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTACReducedTotalVat($value)
+    public function setPTACReducedTotalVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -772,7 +693,7 @@ class Builder
      * Total VAT at reduced rate<br>
      * @return float|null Total VAT at reduced rate
      */
-    public function getPTACReducedTotalVat()
+    public function getPTACReducedTotalVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PTAC_REDUCED_TOTAL_IVA, $this->properties
@@ -790,13 +711,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTACIntermediateBaseVat($value)
+    public function setPTACIntermediateBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -811,7 +728,7 @@ class Builder
      * Total value of the tax base subject to the intermediate VAT rate.
      * @return float|null Total value of the tax base
      */
-    public function getPTACIntermediateBaseVat()
+    public function getPTACIntermediateBaseVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PTAC_INTERMEDIATE_BASE_IVA, $this->properties
@@ -828,13 +745,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTACIntermediateTotalVat($value)
+    public function setPTACIntermediateTotalVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -848,7 +761,7 @@ class Builder
      * Total VAT at intermediate rate<br>
      * @return float|null Total VAT at reduced rate
      */
-    public function getPTACIntermediateTotalVat()
+    public function getPTACIntermediateTotalVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PTAC_INTERMEDIATE_TOTAL_IVA, $this->properties
@@ -866,13 +779,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTACNormalBaseVat($value)
+    public function setPTACNormalBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -887,7 +796,7 @@ class Builder
      * Total value of the tax base subject to the normal VAT rate.
      * @return float|null Total value of the tax base
      */
-    public function getPTACNormalBaseVat()
+    public function getPTACNormalBaseVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PTAC_NORMAL_BASE_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PTAC_NORMAL_BASE_IVA];
@@ -902,13 +811,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTACNormalTotalVat($value)
+    public function setPTACNormalTotalVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -922,7 +827,7 @@ class Builder
      * Total VAT at normal rate<br>
      * @return float|null Total VAT at reduced rate
      */
-    public function getPTACNormalTotalVat()
+    public function getPTACNormalTotalVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PTAC_NORMAL_TOTAL_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PTAC_NORMAL_TOTAL_IVA];
@@ -940,13 +845,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTMAExemptedBaseVat($value)
+    public function setPTMAExemptedBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptexcemptedbasevat_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptexcemptedbasevat_wrong_format");
         }
 
@@ -963,7 +864,7 @@ class Builder
      * whether or not they are exempt from Stamp Duty).
      * @return float|null Total value of the tax base exempt from VAT
      */
-    public function getPTMAExemptedBaseVat()
+    public function getPTMAExemptedBaseVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PTMA_EXEMPTED_BASE_IVA, $this->properties
@@ -981,13 +882,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTMAReducedBaseVat($value)
+    public function setPTMAReducedBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -1002,7 +899,7 @@ class Builder
      * Total value of the tax base subject to the reduced VAT rate.
      * @return float|null Total value of the tax base
      */
-    public function getPTMAReducedBaseVat()
+    public function getPTMAReducedBaseVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PTMA_REDUCED_BASE_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PTMA_REDUCED_BASE_IVA];
@@ -1017,13 +914,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTMAReducedTotalVat($value)
+    public function setPTMAReducedTotalVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptreducedbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptreducedbaseiva_wrong_format");
         }
 
@@ -1037,7 +930,7 @@ class Builder
      * Total VAT at reduced rate<br>
      * @return float|null Total VAT at reduced rate
      */
-    public function getPTMAReducedTotalVat()
+    public function getPTMAReducedTotalVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PTMA_REDUCED_TOTAL_IVA, $this->properties
@@ -1055,13 +948,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTMAIntermediateBaseVat($value)
+    public function setPTMAIntermediateBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -1076,7 +965,7 @@ class Builder
      * Total value of the tax base subject to the intermediate VAT rate.
      * @return float|null Total value of the tax base
      */
-    public function getPTMAIntermediateBaseVat()
+    public function getPTMAIntermediateBaseVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PTMA_INTERMEDIATE_BASE_IVA, $this->properties
@@ -1093,13 +982,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTMAIntermediateTotalVat($value)
+    public function setPTMAIntermediateTotalVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptintermediatebaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptintermediatebaseiva_wrong_format");
         }
 
@@ -1113,7 +998,7 @@ class Builder
      * Total VAT at intermediate rate<br>
      * @return float|null Total VAT at reduced rate
      */
-    public function getPTMAIntermediateTotalVat()
+    public function getPTMAIntermediateTotalVat() : ?float
     {
         if (\array_key_exists(
             Tokens::T_PTMA_INTERMEDIATE_TOTAL_IVA, $this->properties
@@ -1131,13 +1016,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTMANormalBaseVat($value)
+    public function setPTMANormalBaseVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -1152,7 +1033,7 @@ class Builder
      * Total value of the tax base subject to the normal VAT rate.
      * @return float|null Total value of the tax base
      */
-    public function getPTMANormalBaseVat()
+    public function getPTMANormalBaseVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PTMA_NORMAL_BASE_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PTMA_NORMAL_BASE_IVA];
@@ -1167,13 +1048,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setPTMANormalTotalVat($value)
+    public function setPTMANormalTotalVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("ptnormalbaseiva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("ptnormalbaseiva_wrong_format");
         }
 
@@ -1187,7 +1064,7 @@ class Builder
      * Total VAT at normal rate<br>
      * @return float|null Total VAT at reduced rate
      */
-    public function getPTMANormalTotalVat()
+    public function getPTMANormalTotalVat() : ?float
     {
         if (\array_key_exists(Tokens::T_PTMA_NORMAL_TOTAL_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_PTMA_NORMAL_TOTAL_IVA];
@@ -1203,13 +1080,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setTotalNonVat($value)
+    public function setTotalNonVat(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("noniva_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0.0) {
+        if ($value <= 0.0) {
             throw new QRCodeException("noniva_wrong_format");
         }
 
@@ -1223,7 +1096,7 @@ class Builder
      * Total value related to non-subject / non-taxable transactions in VAT.
      * @return float|null Total value of non-subject / non-taxable
      */
-    public function getTotalNonVat()
+    public function getTotalNonVat() : ?float
     {
         if (\array_key_exists(Tokens::T_TOTAL_NON_IVA, $this->properties)) {
             return (float) $this->properties[Tokens::T_TOTAL_NON_IVA];
@@ -1239,13 +1112,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setTotalStampTax($value)
+    public function setTotalStampTax(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("stamptax_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0.0) {
+        if ($value <= 0.0) {
             throw new QRCodeException("stamptax_wrong_format");
         }
 
@@ -1259,7 +1128,7 @@ class Builder
      * Total value of stamp tax.
      * @return float|null Total value of stamp tax
      */
-    public function getTotalStampTax()
+    public function getTotalStampTax() : ?float
     {
         if (\array_key_exists(Tokens::T_TOTAL_STAMP_TAX, $this->properties)) {
             return (float) $this->properties[Tokens::T_TOTAL_STAMP_TAX];
@@ -1275,13 +1144,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setTaxPayable($value)
+    public function setTaxPayable(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("taxpayable_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value < 0.0) {
+        if ($value < 0.0) {
             throw new QRCodeException("taxpayable_wrong_format");
         }
 
@@ -1295,7 +1160,7 @@ class Builder
      * Total value of VAT and Stamp Tax - TaxPayable field of SAF-T (PT)
      * @return float|null Total tax payable
      */
-    public function getTaxPayable()
+    public function getTaxPayable() : ?float
     {
         if (\array_key_exists(Tokens::T_TAX_PAYABLE, $this->properties)) {
             return (float) $this->properties[Tokens::T_TAX_PAYABLE];
@@ -1311,13 +1176,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setGrossTotal($value)
+    public function setGrossTotal(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("grosstotal_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value < 0.0) {
+        if ($value < 0.0) {
             throw new QRCodeException("grosstotal_wrong_format");
         }
 
@@ -1331,7 +1192,7 @@ class Builder
      * Total document value - GrossTotal field of SAF-T (PT).
      * @return float|null Total gross
      */
-    public function getGrossTotal()
+    public function getGrossTotal() :?float
     {
         if (\array_key_exists(Tokens::T_GROSS_TOTAL, $this->properties)) {
             return (float) $this->properties[Tokens::T_GROSS_TOTAL];
@@ -1346,13 +1207,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setWithholdingTaxAmount($value)
+    public function setWithholdingTaxAmount(float $value) : Builder
     {
-        if ($value === null) {
-            throw new QRCodeException("withholdingtaxamount_can_not_be_null");
-        }
-
-        if (\is_float($value) === false || $value <= 0) {
+        if ($value <= 0) {
             throw new QRCodeException("withholdingtaxamount_wrong_format");
         }
 
@@ -1365,7 +1222,7 @@ class Builder
      * Withholding Tax Amount
      * @return float|null Withholding Tax Amount
      */
-    public function getWithholdingTaxAmount()
+    public function getWithholdingTaxAmount() :?float
     {
         if (\array_key_exists(
             Tokens::T_WITHHOLDING_TAX_AMOUNT, $this->properties
@@ -1382,13 +1239,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setHash($hash)
+    public function setHash(string $hash) : Builder
     {
-        if ($hash === null) {
-            throw new QRCodeException("hash_can_not_be_null");
-        }
-
-        if (\is_string($hash) === false || (\strlen($hash) !== 4 && $hash !== "")) {
+        if (\strlen($hash) !== 4 && $hash !== "") {
             throw new QRCodeException("hash_wrong_format");
         }
 
@@ -1401,7 +1254,7 @@ class Builder
      * 4 Hash characters
      * @return string|null The 4 Hash characters
      */
-    public function getHash()
+    public function getHash() : ?string
     {
         if (\array_key_exists(Tokens::T_HASH, $this->properties)) {
             return $this->properties[Tokens::T_HASH];
@@ -1416,13 +1269,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setCertificateNo($number)
+    public function setCertificateNo(int $number) : Builder
     {
-        if ($number === null) {
-            throw new QRCodeException("certificate_can_not_be_null");
-        }
-
-        if (\is_int($number) === false || $number < 1 || $number > 9999) {
+        if ($number < 1 || $number > 9999) {
             throw new QRCodeException("certificate_wrong_format");
         }
 
@@ -1435,7 +1284,7 @@ class Builder
      * Program certificate number
      * @return int|null Program certificate number
      */
-    public function getCertificateNo()
+    public function getCertificateNo() : ?int
     {
         if (\array_key_exists(Tokens::T_CERTIFICATE, $this->properties)) {
             return (int) $this->properties[Tokens::T_CERTIFICATE];
@@ -1454,13 +1303,9 @@ class Builder
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
-    public function setOtherInfo($info)
+    public function setOtherInfo(string $info) : Builder
     {
-        if ($info === null) {
-            throw new QRCodeException("otherinfo_can_not_be_null");
-        }
-
-        if (\is_string($info) === false || \strlen($info) > 65 || $info === "") {
+        if (\strlen($info) > 65 || $info === "") {
             throw new QRCodeException("otherinfo_wrong_format");
         }
 
@@ -1481,7 +1326,7 @@ class Builder
      * This field cannot contain the asterisk character (*).
      * @return string|null Info
      */
-    public function getOtherInfo()
+    public function getOtherInfo() : ?string
     {
         if (\array_key_exists(Tokens::T_OTHER_INFO, $this->properties)) {
             return $this->properties[Tokens::T_OTHER_INFO];
@@ -1495,7 +1340,7 @@ class Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      * @return string
      */
-    public function getQrCodeString($check = true)
+    public function getQrCodeString(bool $check = true) : string
     {
         $tokens = Tokens::getTokens();
         $qr     = "";
@@ -1525,7 +1370,7 @@ class Builder
      * @throws QRCodeException
      * @return void
      */
-    protected function iterateCode($qrCodeStr, $setValue)
+    protected function iterateCode(string $qrCodeStr, bool $setValue) : void
     {
         \Logger::getLogger(\get_class($this))->debug(__METHOD__);
         $msgParsed = "Field '%s' parsed with value '%s'";
@@ -1939,8 +1784,8 @@ class Builder
     /**
      * Iterate over the Country Region fiscal zone PT -> fields I2-I8
      *  
-     * @param array<string, string> $spl the array to iterat over the field I2-I8
-     * @param array<int, string> $tokens the tokens
+     * @param string[] $spl the array to iterat over the field I2-I8
+     * @param string[] $tokens the tokens
      * @param string $error Error message template
      * @param string $errorStop Stop error message template
      * @param string $msgParsed Parsed message template
@@ -1950,9 +1795,10 @@ class Builder
      * @throws QRCodeException
      * @return void
      */
-    protected function setIterateRegionPT(&$spl, &$tokens, $error, $errorStop,
-                                          $msgParsed, $setValue, &$field,
-                                          &$value)
+    protected function setIterateRegionPT(array &$spl, array &$tokens, string $error, 
+                                          string $errorStop, string $msgParsed, 
+                                          bool $setValue, string &$field,
+                                          string &$value) : void
     {
         $noField = true;
 
@@ -2143,8 +1989,8 @@ class Builder
     /**
      * Iterate over the Country Region fiscal zone PT-AC -> fields J2-J8
      *  
-     * @param array<string, string> $spl the array to iterat over the field J2-J8
-     * @param array<int, string> $tokens the tokens
+     * @param string[] $spl the array to iterat over the field J2-J8
+     * @param string[] $tokens the tokens
      * @param string $error Error message template
      * @param string $errorStop Stop error message template
      * @param string $msgParsed Parsed message template
@@ -2154,9 +2000,10 @@ class Builder
      * @throws QRCodeException
      * @return void
      */
-    protected function setIterateRegionPTAC(&$spl, &$tokens, $error, $errorStop,
-                                            $msgParsed, $setValue, &$field,
-                                            &$value)
+    protected function setIterateRegionPTAC(array &$spl, array &$tokens, 
+                                            string $error, string $errorStop,
+                                            string $msgParsed, bool $setValue, 
+                                            string &$field, string &$value) : void
     {
         $noField = true;
 
@@ -2347,8 +2194,8 @@ class Builder
     /**
      * Iterate over the Country Region fiscal zone PT-MA -> fields K2-K8
      *  
-     * @param array<string, string> $spl the array to iterat over the field J2-J8
-     * @param array<int, string> $tokens the tokens
+     * @param string[] $spl the array to iterat over the field J2-J8
+     * @param string[] $tokens the tokens
      * @param string $error Error message template
      * @param string $errorStop Stop error message template
      * @param string $msgParsed Parsed message template
@@ -2358,9 +2205,9 @@ class Builder
      * @throws QRCodeException
      * @return void
      */
-    protected function setIterateRegionPTMA(&$spl, &$tokens, $error, $errorStop,
-                                            $msgParsed, $setValue, &$field,
-                                            &$value)
+    protected function setIterateRegionPTMA(array &$spl, array &$tokens, string$error, 
+                                            string $errorStop, string $msgParsed, 
+                                            bool $setValue, string &$field, string &$value): void
     {
         $noField = true;
 
@@ -2548,14 +2395,14 @@ class Builder
     }
 
     /**
-     * Split teh field name and value
+     * Split the field name and value
      * @param string $string
      * @param string $field The returned field name (passed as refernce)
      * @param string $value The returned field value (passed as refernce)
      * @throws QRCodeException
      * @return void
      */
-    protected function splitFieldValue($string, &$field, &$value)
+    protected function splitFieldValue(string $string, string &$field, string &$value) : void
     {
         $pos = \strpos($string, Tokens::T_FIELD_SEP);
         if ($pos === false) {
@@ -2580,7 +2427,7 @@ class Builder
      * @param string $string
      * @return \Rebelo\At\QRCode\Builder
      */
-    public static function parseString($string)
+    public static function parseString(string $string) : Builder
     {
         \Logger::getLogger(__CLASS__)->debug(__METHOD__);
         $builder = new Builder();
@@ -2593,7 +2440,7 @@ class Builder
      * @param string $path
      * @return void
      */
-    public function buildImage($path)
+    public function buildImage(string $path) : void
     {
         \QRcode::png(
             $this->getQrCodeString(false), $path, self::$level, self::$size,

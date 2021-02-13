@@ -21,7 +21,12 @@ class BuilderPublic extends Builder
         parent::__construct();
     }
 
-    public function iterateCode($code, $setvalue)
+    /**
+     * 
+     * @param string $code
+     * @param bool $setvalue
+     */
+    public function iterateCode(string $code, bool $setvalue) : void
     {
         parent::iterateCode($code, $setvalue);
     }

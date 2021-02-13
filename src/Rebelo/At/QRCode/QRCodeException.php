@@ -22,7 +22,7 @@ class QRCodeException extends \Exception
      * @param \Throwable $previous
      * @return void
      */
-    public function __construct($message = "", $code = 0, \Throwable $previous = NULL)
+    public function __construct(string $message = "", int $code = 0, \Throwable $previous = NULL)
     {
         \Logger::getLogger(\get_class($this))->error($message);
         parent::__construct($message, $code, $previous);
