@@ -36,13 +36,13 @@ class Builder
     public static int $level = QR_ECLEVEL_M;
 
     /**
-     * 
+     *
      * @var string[]
      */
     protected array $properties = array();
 
     /**
-     * 
+     *
      * @since 1.1.0
      */
     public function __construct()
@@ -86,7 +86,7 @@ class Builder
             throw new QRCodeException("issuer_tin_wrong_format");
         }
 
-        $this->properties[Tokens::T_ISSUER_TIN] = (string) $tin;
+        $this->properties[Tokens::T_ISSUER_TIN] = $tin;
         return $this;
     }
 
@@ -107,7 +107,7 @@ class Builder
     /**
      * Field: B (This field is mandatory)<br>
      * Buyer's TIN (NIF)<br>
-     * Fill in with the buyer's TIN. When issuing a document, 
+     * Fill in with the buyer's TIN. When issuing a document,
      * the “Final Consumer” fill in with 999999990.<br>
      * @param string $tin The buyer's TIN (NIF)
      * @return \Rebelo\At\QRCode\Builder
@@ -119,7 +119,7 @@ class Builder
             throw new QRCodeException("buyer_tin_wrong_format");
         }
 
-        $this->properties[Tokens::T_BUYER_TIN] = (string) $tin;
+        $this->properties[Tokens::T_BUYER_TIN] = $tin;
         return $this;
     }
 
@@ -141,7 +141,7 @@ class Builder
      * Field: C (This field is mandatory)<br>
      * Buyer's Country<br>
      * Fill in with the buyer's country code, as the Customers SAFT table.<br>
-     * @param string $countryCode The country code 
+     * @param string $countryCode The country code
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
@@ -151,7 +151,7 @@ class Builder
             throw new QRCodeException("country_code_wrong_format");
         }
 
-        $this->properties[Tokens::T_BUYER_COUNTRY] = (string) $countryCode;
+        $this->properties[Tokens::T_BUYER_COUNTRY] = $countryCode;
         return $this;
     }
 
@@ -172,7 +172,7 @@ class Builder
      * Field: D (This field is mandatory)<br>
      * Document type<br>
      * Fill in according to the type of SAF-T (PT).<br>
-     * @param string $type The document type 
+     * @param string $type The document type
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
@@ -182,7 +182,7 @@ class Builder
             throw new QRCodeException("doc_type_wrong_format");
         }
 
-        $this->properties[Tokens::T_DOC_TYPE] = (string) $type;
+        $this->properties[Tokens::T_DOC_TYPE] = $type;
         return $this;
     }
 
@@ -204,7 +204,7 @@ class Builder
      * Field: E (This field is mandatory)<br>
      * Document status<br>
      * Fill in according to the type of SAF-T (PT).<br>
-     * @param string $status The document status 
+     * @param string $status The document status
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
@@ -214,7 +214,7 @@ class Builder
             throw new QRCodeException("doc_status_wrong_format");
         }
 
-        $this->properties[Tokens::T_DOC_STATUS] = (string) $status;
+        $this->properties[Tokens::T_DOC_STATUS] = $status;
         return $this;
     }
 
@@ -236,7 +236,7 @@ class Builder
      * Field: F (This field is mandatory)<br>
      * Document date<br>
      * Use the format 'YYYYMMDD'<br>
-     * @param string $date The document date 
+     * @param string $date The document date
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
@@ -246,7 +246,7 @@ class Builder
             throw new QRCodeException("doc_date_wrong_format");
         }
 
-        $this->properties[Tokens::T_DOC_DATE] = (string) $date;
+        $this->properties[Tokens::T_DOC_DATE] = $date;
         return $this;
     }
 
@@ -279,7 +279,7 @@ class Builder
             throw new QRCodeException("doc_no_wrong_format");
         }
 
-        $this->properties[Tokens::T_DOC_NO] = (string) $docNo;
+        $this->properties[Tokens::T_DOC_NO] = $docNo;
         return $this;
     }
 
@@ -309,12 +309,12 @@ class Builder
     public function setAtcud(string $atcud) : Builder
     {
         if ($atcud !== "0") {
-            if (\strlen($atcud) > 70 || \preg_match("/^[A-Z0-9]{1,}-[0-9]{1,}$/", $atcud) !== 1) {
+            if (\strlen($atcud) > 70 || \preg_match("/^[A-Z0-9]+-[0-9]+$/", $atcud) !== 1) {
                 throw new QRCodeException("atcud_wrong_format");
             }
         }
-        
-        $this->properties[Tokens::T_ATCUD] = (string) $atcud;
+
+        $this->properties[Tokens::T_ATCUD] = $atcud;
         return $this;
     }
 
@@ -334,8 +334,8 @@ class Builder
 
     /**
      * Field: I1<br>
-     * Invoke only this method if the case of a document 
-     * without an indication of the VAT rate, 
+     * Invoke only this method if the case of a document
+     * without an indication of the VAT rate,
      * which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)
      * @return \Rebelo\At\QRCode\Builder
      */
@@ -347,8 +347,8 @@ class Builder
 
     /**
      * Field: I1<br>
-     * Verify if is a document 
-     * without an indication of the VAT rate, 
+     * Verify if is a document
+     * without an indication of the VAT rate,
      * which should appear in table 4.2, 4.3 or 4.4 of the SAF-T (PT)
      * @return bool|null null if is not setted
      */
@@ -368,8 +368,8 @@ class Builder
     /**
      * Field: I2<br>
      * VAT-exempt tax base of PT fiscal region<br>
-     * Total value of the tax base exempt from VAT 
-     * (including taxable transactions under Stamp Duty, 
+     * Total value of the tax base exempt from VAT
+     * (including taxable transactions under Stamp Duty,
      * whether or not they are exempt from Stamp Duty).
      * @param float $value Total value of the tax base exempt from VAT
      * @return \Rebelo\At\QRCode\Builder
@@ -389,8 +389,8 @@ class Builder
     /**
      * Field: I2<br>
      * VAT-exempt tax base of PT fiscal region<br>
-     * Total value of the tax base exempt from VAT 
-     * (including taxable transactions under Stamp Duty, 
+     * Total value of the tax base exempt from VAT
+     * (including taxable transactions under Stamp Duty,
      * whether or not they are exempt from Stamp Duty).
      * @return float|null Total value of the tax base exempt from VAT
      */
@@ -604,8 +604,8 @@ class Builder
     /**
      * Field: J2<br>
      * VAT-exempt tax base of PTAC fiscal region<br>
-     * Total value of the tax base exempt from VAT 
-     * (including taxable transactions under Stamp Duty, 
+     * Total value of the tax base exempt from VAT
+     * (including taxable transactions under Stamp Duty,
      * whether or not they are exempt from Stamp Duty).
      * @param float $value Total value of the tax base exempt from VAT
      * @return \Rebelo\At\QRCode\Builder
@@ -626,8 +626,8 @@ class Builder
     /**
      * Field: J2<br>
      * VAT-exempt tax base of PTAC fiscal region<br>
-     * Total value of the tax base exempt from VAT 
-     * (including taxable transactions under Stamp Duty, 
+     * Total value of the tax base exempt from VAT
+     * (including taxable transactions under Stamp Duty,
      * whether or not they are exempt from Stamp Duty).
      * @return float|null Total value of the tax base exempt from VAT
      */
@@ -842,8 +842,8 @@ class Builder
     /**
      * Field: K2<br>
      * VAT-exempt tax base of PTMA fiscal region<br>
-     * Total value of the tax base exempt from VAT 
-     * (including taxable transactions under Stamp Duty, 
+     * Total value of the tax base exempt from VAT
+     * (including taxable transactions under Stamp Duty,
      * whether or not they are exempt from Stamp Duty).
      * @param float $value Total value of the tax base exempt from VAT
      * @return \Rebelo\At\QRCode\Builder
@@ -863,8 +863,8 @@ class Builder
     /**
      * Field: K2<br>
      * VAT-exempt tax base of PTMA fiscal region<br>
-     * Total value of the tax base exempt from VAT 
-     * (including taxable transactions under Stamp Duty, 
+     * Total value of the tax base exempt from VAT
+     * (including taxable transactions under Stamp Duty,
      * whether or not they are exempt from Stamp Duty).
      * @return float|null Total value of the tax base exempt from VAT
      */
@@ -1239,13 +1239,14 @@ class Builder
     /**
      * Field: Q<br>
      * 4 Hash characters<br>
-     * @param string $hash The 4 Hash characters
+     * In case of documents with no digital signature hash the field is filled with 0 (zero)
+     * @param string $hash The 4 Hash characters or 0 if no hash
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
      */
     public function setHash(string $hash) : Builder
     {
-        if (\strlen($hash) !== 4 && $hash !== "") {
+        if (\strlen($hash) !== 4 && $hash !== "0") {
             throw new QRCodeException("hash_wrong_format");
         }
 
@@ -1299,8 +1300,8 @@ class Builder
     /**
      * Field: S<br>
      * Other info<br>
-     * Field of free filling, in which, for example, 
-     * information for payment can be indicated 
+     * Field of free filling, in which, for example,
+     * information for payment can be indicated
      * (ex: from IBAN or Ref MB, with the tab «;»).
      * This field cannot contain the asterisk character (*).
      * @param string $info Other info
@@ -1324,8 +1325,8 @@ class Builder
     /**
      * Field: S<br>
      * Other info<br>
-     * Field of free filling, in which, for example, 
-     * information for payment can be indicated 
+     * Field of free filling, in which, for example,
+     * information for payment can be indicated
      * (ex: from IBAN or Ref MB, with the tab «;»).
      * This field cannot contain the asterisk character (*).
      * @return string|null Info
@@ -1339,7 +1340,7 @@ class Builder
     }
 
     /**
-     * Get QrCode string 
+     * Get QrCode string
      * @param bool $check Check fields
      * @throws \Rebelo\At\QRCode\QRCodeException
      * @return string
@@ -1368,20 +1369,22 @@ class Builder
     }
 
     /**
-     * iterarte over the string tokens to check if are correct.
-     * @param string $qrCodeStr The QrCode string
-     * @param bool $setValue If true properties of Builder wil be setted, used for parse a string
-     * @throws QRCodeException
+     * Iterate over the string tokens to check if are correct.
+     *
+     * @param string $qrQrQrCodeStr The QrCode string
+     * @param bool   $setValue      If true properties of Builder wil be setted, used for parse a string
+     *
      * @return void
+     *@throws QRCodeException
      */
-    protected function iterateCode(string $qrCodeStr, bool $setValue) : void
+    protected function iterateCode(string $qrQrQrCodeStr, bool $setValue) : void
     {
         \Logger::getLogger(\get_class($this))->debug(__METHOD__);
         $msgParsed = "Field '%s' parsed with value '%s'";
         $errorStop = "QRcode string wrong stop at '%s'";
         $error     = "Next filed should be '%s' but is '%s'";
         $tokens    = Tokens::getTokens();
-        $spl       = \explode("*", $qrCodeStr);
+        $spl       = \explode("*", $qrQrQrCodeStr);
 
         // Field A, Index 0
         /* @phpstan-ignore-next-line */
@@ -1787,7 +1790,7 @@ class Builder
 
     /**
      * Iterate over the Country Region fiscal zone PT -> fields I2-I8
-     *  
+     *
      * @param string[] $spl the array to iterat over the field I2-I8
      * @param string[] $tokens the tokens
      * @param string $error Error message template
@@ -1799,8 +1802,8 @@ class Builder
      * @throws QRCodeException
      * @return void
      */
-    protected function setIterateRegionPT(array &$spl, array &$tokens, string $error, 
-                                          string $errorStop, string $msgParsed, 
+    protected function setIterateRegionPT(array &$spl, array &$tokens, string $error,
+                                          string $errorStop, string $msgParsed,
                                           bool $setValue, string &$field,
                                           string &$value) : void
     {
@@ -1992,7 +1995,7 @@ class Builder
 
     /**
      * Iterate over the Country Region fiscal zone PT-AC -> fields J2-J8
-     *  
+     *
      * @param string[] $spl the array to iterat over the field J2-J8
      * @param string[] $tokens the tokens
      * @param string $error Error message template
@@ -2004,9 +2007,9 @@ class Builder
      * @throws QRCodeException
      * @return void
      */
-    protected function setIterateRegionPTAC(array &$spl, array &$tokens, 
+    protected function setIterateRegionPTAC(array &$spl, array &$tokens,
                                             string $error, string $errorStop,
-                                            string $msgParsed, bool $setValue, 
+                                            string $msgParsed, bool $setValue,
                                             string &$field, string &$value) : void
     {
         $noField = true;
@@ -2197,7 +2200,7 @@ class Builder
 
     /**
      * Iterate over the Country Region fiscal zone PT-MA -> fields K2-K8
-     *  
+     *
      * @param string[] $spl the array to iterat over the field J2-J8
      * @param string[] $tokens the tokens
      * @param string $error Error message template
@@ -2209,8 +2212,8 @@ class Builder
      * @throws QRCodeException
      * @return void
      */
-    protected function setIterateRegionPTMA(array &$spl, array &$tokens, string$error, 
-                                            string $errorStop, string $msgParsed, 
+    protected function setIterateRegionPTMA(array &$spl, array &$tokens, string$error,
+                                            string $errorStop, string $msgParsed,
                                             bool $setValue, string &$field, string &$value): void
     {
         $noField = true;
@@ -2416,7 +2419,7 @@ class Builder
         $value = \substr($string, $pos + 1);
 
         /** @phpstan-ignore-next-line */
-        if ($value === false || $field === false) {            
+        if ($value === false || $field === false) {
             // Payments has no  hash but field is mandatory
             /** @phpstan-ignore-next-line */
             if($field === "Q" && $value === false && \in_array($this->getDocType(), array("RG", "RC"))){
@@ -2429,8 +2432,11 @@ class Builder
 
     /**
      * Parse a QRCode string
+     *
      * @param string $string
+     *
      * @return \Rebelo\At\QRCode\Builder
+     * @throws \Rebelo\At\QRCode\QRCodeException
      */
     public static function parseString(string $string) : Builder
     {
@@ -2442,8 +2448,11 @@ class Builder
 
     /**
      * Build the QRcode image as png
+     *
      * @param string $path
+     *
      * @return void
+     * @throws \Rebelo\At\QRCode\QRCodeException
      */
     public function buildImage(string $path) : void
     {

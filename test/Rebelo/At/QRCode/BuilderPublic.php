@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Rebelo\At\QRCode;
 
-use Rebelo\At\QRCode\Builder;
 /**
  * BuilderPublic<br>
  * Get the protected and private methods of builder as public for test
@@ -21,13 +20,15 @@ class BuilderPublic extends Builder
         parent::__construct();
     }
 
-    /**
-     * 
-     * @param string $code
-     * @param bool $setvalue
-     */
-    public function iterateCode(string $code, bool $setvalue) : void
+	/**
+	 *
+	 * @param string $qrQrCodeStr
+	 * @param bool   $setValue
+	 *
+	 * @throws \Rebelo\At\QRCode\QRCodeException
+	 */
+    public function iterateCode(string $qrQrCodeStr, bool $setValue) : void
     {
-        parent::iterateCode($code, $setvalue);
+        parent::iterateCode($qrQrCodeStr, $setValue);
     }
 }

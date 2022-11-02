@@ -9,9 +9,6 @@ declare(strict_types=1);
 namespace Rebelo\At\QRCode;
 
 use PHPUnit\Framework\TestCase;
-use Rebelo\At\QRCode\Builder;
-use Rebelo\At\QRCode\Tokens;
-use Rebelo\At\QRCode\BuilderPublic;
 
 class BuilderTest extends TestCase
 {
@@ -20,56 +17,56 @@ class BuilderTest extends TestCase
     //phpcs:disable Generic.Files.LineLength.MaxExceeded
 
     /**
-     * QRCode string example 1 from AT's technical information 
+     * QRCode string example 1 from AT's technical information
      */
     const AT_EXAMPLE_1 = "A:123456789*B:999999990*C:PT*D:FT*E:N*F:20191231*G:FT AB2019/0035*H:CSDF7T5H-0035*I1:PT*I2:12000.00*I3:15000.00*I4:900.00*I5:50000.00*I6:6500.00*I7:80000.00*I8:18400.00*J1:PT-AC*J2:10000.00*J3:25000.56*J4:1000.02*J5:75000.00*J6:6750.00*J7:100000.00*J8:18000.00*K1:PT-MA*K2:5000.00*K3:12500.00*K4:625.00*K5:25000.00*K6:3000.00*K7:40000.00*K8:8800.00*L:100.00*M:25.00*N:64000.02*O:513600.58*P:100.00*Q:kLp0*R:9999*S:TB;PT00000000000000000000000;513500.58";
 
     /**
-     * QRCode string example 2 from AT's technical information 
+     * QRCode string example 2 from AT's technical information
      */
     const AT_EXAMPLE_2 = "A:123456789*B:999999990*C:PT*D:FS*E:N*F:20190812*G:FS CDVF/12345*H:CDF7T5HD-12345*I1:PT*I7:0.65*I8:0.15*N:0.15*O:0.80*Q:YhGV*R:9999*S:NU;0.80";
 
     /**
-     * QRCode string example 3 from AT's technical information 
+     * QRCode string example 3 from AT's technical information
      */
     const AT_EXAMPLE_3 = "A:500000000*B:123456789*C:PT*D:PF*E:N*F:20190123*G:PF G2019CB/145789*H:HB6FT7RV-145789*I1:PT*I2:12345.34*I3:12532.65*I4:751.96*I5:52789.00*I6:6862.57*I7:32425.69*I8:7457.91*N:15072.44*O:125165.12*Q:r/fY*R:9999";
 
     /**
-     * QRCode string example 4 from AT's technical information 
+     * QRCode string example 4 from AT's technical information
      */
     const AT_EXAMPLE_4 = "A:500000000*B:123456789*C:PT*D:GT*E:N*F:20190720*G:GT G234CB/50987*H:GTVX4Y8B-50987*I1:0*N:0.00*O:0.00*Q:5uIg*R:9999";
 
     /**
-     * QRCode string example 4 from AT's technical information 
+     * QRCode string example 4 from AT's technical information
      */
     const EXAMPLE_WRONG_END_1 = "A:500000000*B:123456789*C:PT*D:GT*E:N*F:20190720*G:GT G234CB/50987*H:GTVX4Y8B-50987*I1:0*N:0.00*O:0.00*Q:5uIg";
 
     /**
-     * QRCode string example 4 from AT's technical information 
+     * QRCode string example 4 from AT's technical information
      */
     const EXAMPLE_WRONG_END_2 = "A:500000000*B:123456789*C:PT*D:GT*E:N*F:20190720*G:GT G234CB/50987*H:GTVX4Y8B-50987*I1:0*N:0.00*O:0.00*Q:5uIg*R:9999*S:AAA*T:CCC";
 
     /**
-     * QRCode string example 4 from AT's technical information 
+     * QRCode string example 4 from AT's technical information
      */
     const EXAMPLE_WRONG = "A:500000000*C:PT*D:GT*E:N*F:20190720*G:GT G234CB/50987*H:GTVX4Y8B-50987*I1:0*N:0.00*O:0.00*Q:5uIg*R:9999*S:AAA*T:CCC";
 
-    
+
     /**
-     * QRCode string with ATCUD zero  
+     * QRCode string with ATCUD zero
      */
     const EXAMPLE_ATCUD_ZERO = "A:500000000*B:123456789*C:PT*D:GT*E:N*F:20190720*G:GT G234CB/50987*H:0*I1:0*N:0.00*O:0.00*Q:5uIg*R:9999";
-    
+
     /**
-     * QRCode string of a payment (RG), no hash but field q (empty), not tax
+     * QRCode string of a payment (RG), no hash but field q is 0, not tax
      */
-    const PAYMENT_EXAMPLE_WITHOUT_TAX = "A:500000000*B:123456789*C:PT*D:RG*E:N*F:20190720*G:RG RG/1*H:GTVX4Y8B-50987*I1:0*N:99.00*O:99.00*Q:*R:9999";
-    
+    const PAYMENT_EXAMPLE_WITHOUT_TAX = "A:500000000*B:123456789*C:PT*D:RG*E:N*F:20190720*G:RG RG/1*H:GTVX4Y8B-50987*I1:0*L:99.00*N:99.00*O:99.00*Q:0*R:9999";
+
     /**
-     * QRCode string of a payment (RC), no hash but field q (empty), with tax 
+     * QRCode string of a payment (RC), no hash but field q is 0, with tax
      */
-    const PAYMENT_EXAMPLE_WITH_TAX = "A:500000000*B:123456789*C:PT*D:RC*E:N*F:20190123*G:RC RC/145789*H:HB6FT7RV-145789*I1:PT*I2:12345.34*I3:12532.65*I4:751.96*I5:52789.00*I6:6862.57*I7:32425.69*I8:7457.91*N:15072.44*O:125165.12*Q:*R:9999";
-    
+    const PAYMENT_EXAMPLE_WITH_TAX = "A:500000000*B:123456789*C:PT*D:RC*E:N*F:20190123*G:RC RC/145789*H:HB6FT7RV-145789*I1:PT*I2:12345.34*I3:12532.65*I4:751.96*I5:52789.00*I6:6862.57*I7:32425.69*I8:7457.91*N:15072.44*O:125165.12*Q:0*R:9999";
+
     // phpcs:enable
 
     /**
@@ -77,7 +74,7 @@ class BuilderTest extends TestCase
      * @return void
      * @test
      */
-    public function testInstance()
+    public function testInstance(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -85,11 +82,12 @@ class BuilderTest extends TestCase
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testIssuerTin()
+    public function testIssuerTin(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -99,7 +97,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setIssuerTin("12924729");
             $this->fail(
-                "Set issuer tin with wrong fromat should "
+                "Set issuer tin with wrong format should "
                 ."throw \Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -111,7 +109,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setIssuerTin("1292472994");
             $this->fail(
-                "Set issuer tin with wrong fromat should throw "
+                "Set issuer tin with wrong format should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -128,16 +126,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_ISSUER_TIN;
 
         $this->assertSame(
-            $tin, $properties[$token], "The setted token is incorrect"
+            $tin, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testBuyerTin()
+    public function testBuyerTin(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -149,7 +148,7 @@ class BuilderTest extends TestCase
                 \str_pad("1292472994", 31, "5", STR_PAD_BOTH)
             );
             $this->fail(
-                "Set buyer tin with wrong fromat should throw "
+                "Set buyer tin with wrong format should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -178,16 +177,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_BUYER_TIN;
 
         $this->assertSame(
-            $tin, $properties[$token], "The setted token is incorrect"
+            $tin, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testCountryCode()
+    public function testCountryCode(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -197,7 +197,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setCountryCode(\str_pad("AA", 13, "A", STR_PAD_BOTH));
             $this->fail(
-                "Set country code with wrong fromat should "
+                "Set country code with wrong format should "
                 ."throw \Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -226,16 +226,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_BUYER_COUNTRY;
 
         $this->assertSame(
-            $countryCode, $properties[$token], "The setted token is incorrect"
+            $countryCode, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testDocType()
+    public function testDocType(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -245,7 +246,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setDocType("AAA");
             $this->fail(
-                "Set doc type with wrong fromat should "
+                "Set doc type with wrong format should "
                 ."throw \Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -257,7 +258,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setDocType("A");
             $this->fail(
-                "Set doc type with wrong fromat should "
+                "Set doc type with wrong format should "
                 ."throw \Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -274,16 +275,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_DOC_TYPE;
 
         $this->assertSame(
-            $docType, $properties[$token], "The setted token is incorrect"
+            $docType, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testDocStatus()
+    public function testDocStatus(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -293,7 +295,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setDocStatus("AA");
             $this->fail(
-                "Set doc status tin with wrong fromat should"
+                "Set doc status tin with wrong format should"
                 ." throw \Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -305,7 +307,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setDocStatus("");
             $this->fail(
-                "Set doc status with wrong fromat should "
+                "Set doc status with wrong format should "
                 ."throw \Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -322,16 +324,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_DOC_STATUS;
 
         $this->assertSame(
-            $status, $properties[$token], "The setted token is incorrect"
+            $status, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testDocDate()
+    public function testDocDate(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -341,7 +344,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setDocDate("19991005");
             $this->fail(
-                "Set doc date with wrong fromat should throw "
+                "Set doc date with wrong format should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -353,7 +356,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setDocDate("");
             $this->fail(
-                "Set doc date with wrong fromat should "
+                "Set doc date with wrong format should "
                 ."throw \Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -370,16 +373,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_DOC_DATE;
 
         $this->assertSame(
-            $date, $properties[$token], "The setted token is incorrect"
+            $date, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testDocNo()
+    public function testDocNo(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -387,9 +391,9 @@ class BuilderTest extends TestCase
         $this->assertNull($builder->getDocNo());
 
         try {
-            $builder->setDocNo(\str_pad("FT FT/9", 61, "9", STR_PAD_RIGHT));
+            $builder->setDocNo(\str_pad("FT FT/9", 61, "9"));
             $this->fail(
-                "Set DocNo with wrong fromat should throw "
+                "Set DocNo with wrong format should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -401,7 +405,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setDocNo("");
             $this->fail(
-                "Set DocNo with wrong fromat should throw "
+                "Set DocNo with wrong format should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -418,16 +422,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_DOC_NO;
 
         $this->assertSame(
-            $no, $properties[$token], "The setted token is incorrect"
+            $no, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testAtcud()
+    public function testAtcud(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -437,7 +442,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setAtcud(\str_pad("AAAA-999", 71, "A", STR_PAD_LEFT));
             $this->fail(
-                "Set Atcud with wrong fromat should throw "
+                "Set Atcud with wrong format should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -449,7 +454,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setAtcud("AA99");
             $this->fail(
-                "Set Atcud with wrong fromat should "
+                "Set Atcud with wrong format should "
                 ."throw \Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -466,7 +471,7 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_ATCUD;
 
         $this->assertSame(
-            $atcude, $properties[$token], "The setted token is incorrect"
+            $atcude, $properties[$token], "The settled token is incorrect"
         );
     }
 
@@ -475,7 +480,7 @@ class BuilderTest extends TestCase
      * @return void
      * @test
      */
-    public function testDocWithoutVat()
+    public function testDocWithoutVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -489,16 +494,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_FISCAL_REGION_PT;
 
         $this->assertSame(
-            "0", $properties[$token], "The setted token is incorrect"
+            "0", $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testDocWithoutVatSettingPT()
+    public function testDocWithoutVatSettingPT(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -510,11 +516,12 @@ class BuilderTest extends TestCase
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testDocWithoutVatSettingPTAC()
+    public function testDocWithoutVatSettingPTAC(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -526,11 +533,12 @@ class BuilderTest extends TestCase
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testDocWithoutVatSettingPTAM()
+    public function testDocWithoutVatSettingPTAM(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -542,11 +550,12 @@ class BuilderTest extends TestCase
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTExemptedBaseVat()
+    public function testPTExemptedBaseVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -574,20 +583,21 @@ class BuilderTest extends TestCase
         $tokenPT    = Tokens::T_FISCAL_REGION_PT;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT", $properties[$tokenPT], "The setted token is incorrect"
+            "PT", $properties[$tokenPT], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTMAExemptedBaseVat()
+    public function testPTMAExemptedBaseVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -615,20 +625,21 @@ class BuilderTest extends TestCase
         $tokenPTMA  = Tokens::T_FISCAL_REGION_PTMA;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-MA", $properties[$tokenPTMA], "The setted token is incorrect"
+            "PT-MA", $properties[$tokenPTMA], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTACExemptedBaseVat()
+    public function testPTACExemptedBaseVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -656,20 +667,21 @@ class BuilderTest extends TestCase
         $tokenPTAC  = Tokens::T_FISCAL_REGION_PTAC;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-AC", $properties[$tokenPTAC], "The setted token is incorrect"
+            "PT-AC", $properties[$tokenPTAC], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTReducedBaseVat()
+    public function testPTReducedBaseVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -697,20 +709,21 @@ class BuilderTest extends TestCase
         $tokenPT    = Tokens::T_FISCAL_REGION_PT;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT", $properties[$tokenPT], "The setted token is incorrect"
+            "PT", $properties[$tokenPT], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTMAReducedBaseVat()
+    public function testPTMAReducedBaseVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -738,20 +751,21 @@ class BuilderTest extends TestCase
         $tokenPTMA  = Tokens::T_FISCAL_REGION_PTMA;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-MA", $properties[$tokenPTMA], "The setted token is incorrect"
+            "PT-MA", $properties[$tokenPTMA], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTACReducedBaseVat()
+    public function testPTACReducedBaseVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -779,20 +793,21 @@ class BuilderTest extends TestCase
         $tokenPTAC  = Tokens::T_FISCAL_REGION_PTAC;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-AC", $properties[$tokenPTAC], "The setted token is incorrect"
+            "PT-AC", $properties[$tokenPTAC], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTReducedTotalVat()
+    public function testPTReducedTotalVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -820,20 +835,21 @@ class BuilderTest extends TestCase
         $tokenPT    = Tokens::T_FISCAL_REGION_PT;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT", $properties[$tokenPT], "The setted token is incorrect"
+            "PT", $properties[$tokenPT], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTMAReducedTotalVat()
+    public function testPTMAReducedTotalVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -861,20 +877,21 @@ class BuilderTest extends TestCase
         $tokenPTMA  = Tokens::T_FISCAL_REGION_PTMA;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-MA", $properties[$tokenPTMA], "The setted token is incorrect"
+            "PT-MA", $properties[$tokenPTMA], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTACReducedTotalVat()
+    public function testPTACReducedTotalVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -902,20 +919,21 @@ class BuilderTest extends TestCase
         $tokenPTAC  = Tokens::T_FISCAL_REGION_PTAC;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-AC", $properties[$tokenPTAC], "The setted token is incorrect"
+            "PT-AC", $properties[$tokenPTAC], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTIntermediateBaseVat()
+    public function testPTIntermediateBaseVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -943,20 +961,21 @@ class BuilderTest extends TestCase
         $tokenPT    = Tokens::T_FISCAL_REGION_PT;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT", $properties[$tokenPT], "The setted token is incorrect"
+            "PT", $properties[$tokenPT], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTMAIntermediateBaseVat()
+    public function testPTMAIntermediateBaseVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -984,20 +1003,21 @@ class BuilderTest extends TestCase
         $tokenPTMA  = Tokens::T_FISCAL_REGION_PTMA;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-MA", $properties[$tokenPTMA], "The setted token is incorrect"
+            "PT-MA", $properties[$tokenPTMA], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTACIntermediateBaseVat()
+    public function testPTACIntermediateBaseVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1025,20 +1045,21 @@ class BuilderTest extends TestCase
         $tokenPTAC  = Tokens::T_FISCAL_REGION_PTAC;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-AC", $properties[$tokenPTAC], "The setted token is incorrect"
+            "PT-AC", $properties[$tokenPTAC], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTIntermediateTotalVat()
+    public function testPTIntermediateTotalVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1066,20 +1087,21 @@ class BuilderTest extends TestCase
         $tokenPT    = Tokens::T_FISCAL_REGION_PT;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT", $properties[$tokenPT], "The setted token is incorrect"
+            "PT", $properties[$tokenPT], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTMAIntermediateTotalVat()
+    public function testPTMAIntermediateTotalVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1109,20 +1131,21 @@ class BuilderTest extends TestCase
         $tokenPTMA  = Tokens::T_FISCAL_REGION_PTMA;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-MA", $properties[$tokenPTMA], "The setted token is incorrect"
+            "PT-MA", $properties[$tokenPTMA], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTACIntermediateTotalVat()
+    public function testPTACIntermediateTotalVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1152,20 +1175,21 @@ class BuilderTest extends TestCase
         $tokenPTAC  = Tokens::T_FISCAL_REGION_PTAC;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-AC", $properties[$tokenPTAC], "The setted token is incorrect"
+            "PT-AC", $properties[$tokenPTAC], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTNormalTotalVat()
+    public function testPTNormalTotalVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1193,20 +1217,21 @@ class BuilderTest extends TestCase
         $tokenPT    = Tokens::T_FISCAL_REGION_PT;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT", $properties[$tokenPT], "The setted token is incorrect"
+            "PT", $properties[$tokenPT], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTMANormalTotalVat()
+    public function testPTMANormalTotalVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1234,20 +1259,21 @@ class BuilderTest extends TestCase
         $tokenPTMA  = Tokens::T_FISCAL_REGION_PTMA;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-MA", $properties[$tokenPTMA], "The setted token is incorrect"
+            "PT-MA", $properties[$tokenPTMA], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testPTACNormalTotalVat()
+    public function testPTACNormalTotalVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1275,20 +1301,21 @@ class BuilderTest extends TestCase
         $tokenPTAC  = Tokens::T_FISCAL_REGION_PTAC;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
 
         $this->assertSame(
-            "PT-AC", $properties[$tokenPTAC], "The setted token is incorrect"
+            "PT-AC", $properties[$tokenPTAC], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testTotalNonVat()
+    public function testTotalNonVat(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1315,16 +1342,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_TOTAL_NON_IVA;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testTotalStampTax()
+    public function testTotalStampTax(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1351,16 +1379,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_TOTAL_STAMP_TAX;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testTaxPayable()
+    public function testTaxPayable(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1387,16 +1416,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_TAX_PAYABLE;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testGrossTotal()
+    public function testGrossTotal(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1423,16 +1453,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_GROSS_TOTAL;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testWithholdingTaxAmount()
+    public function testWithholdingTaxAmount(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1459,16 +1490,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_WITHHOLDING_TAX_AMOUNT;
 
         $this->assertSame(
-            $value, $properties[$token], "The setted token is incorrect"
+            $value, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testHash()
+    public function testHash(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1478,7 +1510,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setHash("AAA");
             $this->fail(
-                "Set hash with wrong fromat should throw "
+                "Set hash with wrong format should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -1490,7 +1522,19 @@ class BuilderTest extends TestCase
         try {
             $builder->setHash("AAAAA");
             $this->fail(
-                "Set country code with wrong fromat should throw "
+                "Set hash with wrong format should throw "
+                ."\Rebelo\At\QRCode\QRCodeException"
+            );
+        } catch (\Exception $ex) {
+            $this->assertInstanceOf(
+                '\Rebelo\At\QRCode\QRCodeException', $ex
+            );
+        }
+
+        try {
+            $builder->setHash("");
+            $this->fail(
+                "Set hash empty should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -1507,24 +1551,25 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_HASH;
 
         $this->assertSame(
-            $hash, $properties[$token], "The setted token is incorrect"
+            $hash, $properties[$token], "The settled token is incorrect"
         );
 
-        $builder->setHash("");
-        $this->assertSame("", $builder->getHash());
+        $builder->setHash("0");
+        $this->assertSame("0", $builder->getHash());
 
         $propEmpty = $builder->getProperties();
         $this->assertSame(
-            "", $propEmpty[$token], "The setted token is incorrect"
+            "0", $propEmpty[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testCertificateNo()
+    public function testCertificateNo(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1534,7 +1579,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setCertificateNo(0);
             $this->fail(
-                "Set CertificateNo stteed to a lower than 1 should throw "
+                "Set CertificateNo to a lower than 1 should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -1563,16 +1608,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_CERTIFICATE;
 
         $this->assertSame(
-            (string) $no, $properties[$token], "The setted token is incorrect"
+            (string) $no, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testOtherInfo()
+    public function testOtherInfo(): void
     {
         $builder = new Builder();
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
@@ -1580,9 +1626,9 @@ class BuilderTest extends TestCase
         $this->assertNull($builder->getOtherInfo());
 
         try {
-            $builder->setOtherInfo(\str_pad("AAA", 70, "A", STR_PAD_RIGHT));
+            $builder->setOtherInfo(\str_pad("AAA", 70, "A"));
             $this->fail(
-                "Set hash with wrong fromat should throw \Rebelo\At\QRCode\QRCodeException"
+                "Set hash with wrong format should throw \Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
             $this->assertInstanceOf(
@@ -1593,7 +1639,7 @@ class BuilderTest extends TestCase
         try {
             $builder->setOtherInfo("");
             $this->fail(
-                "Set country code with wrong fromat should throw "
+                "Set country code with wrong format should throw "
                 ."\Rebelo\At\QRCode\QRCodeException"
             );
         } catch (\Exception $ex) {
@@ -1611,16 +1657,17 @@ class BuilderTest extends TestCase
         $token      = Tokens::T_OTHER_INFO;
 
         $this->assertSame(
-            $info, $properties[$token], "The setted token is incorrect"
+            $info, $properties[$token], "The settled token is incorrect"
         );
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testIterateCode()
+    public function testIterateCode(): void
     {
         $builder = new BuilderPublic();
         $builder->iterateCode(self::AT_EXAMPLE_1, false);
@@ -1628,59 +1675,64 @@ class BuilderTest extends TestCase
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testParseStringAtExmaple1()
+    public function testParseStringAtExample1(): void
     {
         $builder = Builder::parseString(self::AT_EXAMPLE_1);
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
-        $this->assertSame(self::AT_EXAMPLE_1, $builder->getQrCodeString(true));
+        $this->assertSame(self::AT_EXAMPLE_1, $builder->getQrCodeString());
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testParseStringAtExmaple2()
+    public function testParseStringAtExample2(): void
     {
         $builder = Builder::parseString(self::AT_EXAMPLE_2);
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
-        $this->assertSame(self::AT_EXAMPLE_2, $builder->getQrCodeString(true));
+        $this->assertSame(self::AT_EXAMPLE_2, $builder->getQrCodeString());
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testParseStringAtExmaple3()
+    public function testParseStringAtExample3(): void
     {
         $builder = Builder::parseString(self::AT_EXAMPLE_3);
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
-        $this->assertSame(self::AT_EXAMPLE_3, $builder->getQrCodeString(true));
+        $this->assertSame(self::AT_EXAMPLE_3, $builder->getQrCodeString());
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testParseStringAtExmaple4()
+    public function testParseStringAtExample4(): void
     {
         $builder = Builder::parseString(self::AT_EXAMPLE_4);
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
-        $this->assertSame(self::AT_EXAMPLE_4, $builder->getQrCodeString(true));
+        $this->assertSame(self::AT_EXAMPLE_4, $builder->getQrCodeString());
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testGenerateImage()
+    public function testGenerateImage(): void
     {
         $builder = Builder::parseString(self::AT_EXAMPLE_1);
         $path    = sys_get_temp_dir().DIRECTORY_SEPARATOR.uniqid("QRCode").".png";
@@ -1694,7 +1746,7 @@ class BuilderTest extends TestCase
      * @return void
      * @test
      */
-    public function testWrongString()
+    public function testWrongString(): void
     {
         try {
             Builder::parseString(self::EXAMPLE_WRONG_END_1);
@@ -1734,38 +1786,41 @@ class BuilderTest extends TestCase
     }
 
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testParseStringAtExmapleAtcudZero()
+    public function testParseStringAtExampleAtcudZero(): void
     {
         $builder = Builder::parseString(self::EXAMPLE_ATCUD_ZERO);
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
-        $this->assertSame(self::EXAMPLE_ATCUD_ZERO, $builder->getQrCodeString(true));
+        $this->assertSame(self::EXAMPLE_ATCUD_ZERO, $builder->getQrCodeString());
     }
-    
+
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testParseStringPaymentExampleWithoutTax()
+    public function testParseStringPaymentExampleWithoutTax(): void
     {
         $builder = Builder::parseString(self::PAYMENT_EXAMPLE_WITHOUT_TAX);
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
-        $this->assertSame(self::PAYMENT_EXAMPLE_WITHOUT_TAX, $builder->getQrCodeString(true));
+        $this->assertSame(self::PAYMENT_EXAMPLE_WITHOUT_TAX, $builder->getQrCodeString());
     }
-    
+
     /**
-     * @author João Rebelo
      * @return void
      * @test
+     * @throws \Rebelo\At\QRCode\QRCodeException
+     * @author João Rebelo
      */
-    public function testParseStringPaymentExampleWithTax()
+    public function testParseStringPaymentExampleWithTax(): void
     {
         $builder = Builder::parseString(self::PAYMENT_EXAMPLE_WITH_TAX);
         $this->assertInstanceOf(self::MAIN_CLASS, $builder);
-        $this->assertSame(self::PAYMENT_EXAMPLE_WITH_TAX, $builder->getQrCodeString(true));
+        $this->assertSame(self::PAYMENT_EXAMPLE_WITH_TAX, $builder->getQrCodeString());
     }
 }
