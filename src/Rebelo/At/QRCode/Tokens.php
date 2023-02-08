@@ -4,7 +4,7 @@
  * @license https://github.com/joaomfrebelo/at_qrcode/blob/master/LICENSE
  * Copyright (c) 2020 João Rebelo
  */
-//declare(strict_types=1);
+declare(strict_types=1);
 
 namespace Rebelo\At\QRCode;
 
@@ -290,7 +290,7 @@ class Tokens
      * The fields name
      * @var array<int, string> Name of the fields in the QRCode string
      */
-    protected static $fields = null;
+    protected static ?array $fields = null;
 
     /**
      * Instanciate the tokenizer

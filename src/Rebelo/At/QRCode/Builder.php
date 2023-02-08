@@ -4,7 +4,7 @@
  * @license https://github.com/joaomfrebelo/at_qrcode/blob/master/LICENSE
  * Copyright (c) 2020 João Rebelo
  */
-//declare(strict_types=1);
+declare(strict_types=1);
 
 namespace Rebelo\At\QRCode;
 
@@ -370,7 +370,7 @@ class Builder
      * VAT-exempt tax base of PT fiscal region<br>
      * Total value of the tax base exempt from VAT
      * (including taxable transactions under Stamp Duty,
-     * whether or not they are exempt from Stamp Duty).
+     * whether they are exempt from Stamp Duty).
      * @param float $value Total value of the tax base exempt from VAT
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
@@ -391,7 +391,7 @@ class Builder
      * VAT-exempt tax base of PT fiscal region<br>
      * Total value of the tax base exempt from VAT
      * (including taxable transactions under Stamp Duty,
-     * whether or not they are exempt from Stamp Duty).
+     * whether they are exempt from Stamp Duty).
      * @return float|null Total value of the tax base exempt from VAT
      */
     public function getPTExemptedBaseVat() : ?float
@@ -606,7 +606,7 @@ class Builder
      * VAT-exempt tax base of PTAC fiscal region<br>
      * Total value of the tax base exempt from VAT
      * (including taxable transactions under Stamp Duty,
-     * whether or not they are exempt from Stamp Duty).
+     * whether they are exempt from Stamp Duty).
      * @param float $value Total value of the tax base exempt from VAT
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
@@ -628,7 +628,7 @@ class Builder
      * VAT-exempt tax base of PTAC fiscal region<br>
      * Total value of the tax base exempt from VAT
      * (including taxable transactions under Stamp Duty,
-     * whether or not they are exempt from Stamp Duty).
+     * whether they are exempt from Stamp Duty).
      * @return float|null Total value of the tax base exempt from VAT
      */
     public function getPTACExemptedBaseVat() : ?float
@@ -844,7 +844,7 @@ class Builder
      * VAT-exempt tax base of PTMA fiscal region<br>
      * Total value of the tax base exempt from VAT
      * (including taxable transactions under Stamp Duty,
-     * whether or not they are exempt from Stamp Duty).
+     * whether they are exempt from Stamp Duty).
      * @param float $value Total value of the tax base exempt from VAT
      * @return \Rebelo\At\QRCode\Builder
      * @throws \Rebelo\At\QRCode\QRCodeException
@@ -865,7 +865,7 @@ class Builder
      * VAT-exempt tax base of PTMA fiscal region<br>
      * Total value of the tax base exempt from VAT
      * (including taxable transactions under Stamp Duty,
-     * whether or not they are exempt from Stamp Duty).
+     * whether they are exempt from Stamp Duty).
      * @return float|null Total value of the tax base exempt from VAT
      */
     public function getPTMAExemptedBaseVat() : ?float
@@ -1802,10 +1802,16 @@ class Builder
      * @throws QRCodeException
      * @return void
      */
-    protected function setIterateRegionPT(array &$spl, array &$tokens, string $error,
-                                          string $errorStop, string $msgParsed,
-                                          bool $setValue, string &$field,
-                                          string &$value) : void
+    protected function setIterateRegionPT(
+        array &$spl,
+        array &$tokens,
+        string $error,
+        string $errorStop,
+        string $msgParsed,
+        bool $setValue,
+        string &$field,
+        string &$value
+    ) : void
     {
         $noField = true;
 
@@ -2418,11 +2424,9 @@ class Builder
         $field = \substr($string, 0, $pos);
         $value = \substr($string, $pos + 1);
 
-        /** @phpstan-ignore-next-line */
-        if ($value === false || $field === false) {
+        if ($value === "" || $field === "") {
             // Payments has no  hash but field is mandatory
-            /** @phpstan-ignore-next-line */
-            if($field === "Q" && $value === false && \in_array($this->getDocType(), array("RG", "RC"))){
+            if($field === "Q" && !empty($value) && \in_array($this->getDocType(), array("RG", "RC"))){
                 $value = "";
                 return;
             }

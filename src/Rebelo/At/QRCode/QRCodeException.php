@@ -4,7 +4,7 @@
  * @license https://github.com/joaomfrebelo/at_qrcode/blob/master/LICENSE
  * Copyright (c) 2020 João Rebelo
  */
-//declare(strict_types=1);
+declare(strict_types=1);
 
 namespace Rebelo\At\QRCode;
 
@@ -15,13 +15,12 @@ namespace Rebelo\At\QRCode;
  */
 class QRCodeException extends \Exception
 {
-    /**
-     * 
-     * @param string $message
-     * @param int $code
-     * @param \Throwable $previous
-     * @return void
-     */
+	/**
+	 *
+	 * @param string $message
+	 * @param int $code
+	 * @param \Throwable|null $previous
+	 */
     public function __construct(string $message = "", int $code = 0, \Throwable $previous = NULL)
     {
         \Logger::getLogger(\get_class($this))->error($message);
